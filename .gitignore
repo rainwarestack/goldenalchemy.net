@@ -1,0 +1,12 @@
+.env
+.env.*
+!.env.example
+node_modules/
+github-pages-setup.jpg
+namecheap-dns-setup.jpg
+meta-*.jpg
+instagram-workflow-added.jpg
+hosting-https-enabled.jpg
+__pycache__/
+docs/data/instagram.json
+golden-alchemy-*-preview.png

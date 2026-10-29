@@ -1,0 +1,21 @@
+{
+  "project": "golden-alchemy",
+  "website": "https://www.goldenalchemy.net",
+  "sources": [
+    {
+      "platform": "instagram",
+      "handle": "goldenalchemy.na",
+      "url": "https://www.instagram.com/goldenalchemy.na/",
+      "status": "authorization_pending"
+    },
+    {
+      "platform": "tiktok",
+      "handle": "goldenalchemy.net",
+      "url": "https://www.tiktok.com/@goldenalchemy.net",
+      "status": "authorization_pending",
+      "handleChangeExpected": true
+    }
+  ],
+  "rss": [],
+  "youtube": null
+}
