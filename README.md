@@ -34,6 +34,8 @@ The collector creates `docs/data/instagram.json` only in the deployment artifact
 
 ## First milestone
 
+Integration work has begun with Instagram. The homepage gallery and Latest activity module share its feed; the activity timeline uses actual upload dates. See `INTEGRATIONS.md` for connection status and next steps. TikTok remains dormant until the owner changes its handle to @goldenalchemy.na. No YouTube or RSS source has been connected.
+
 - Home: hero, four-elements philosophy, section previews, connected Instagram gallery, and social links.
 - Forum: community layout with honest account/chat availability states. No persisted accounts, posts, likes, comments, or chat.
 - Oracle: search preview that sends no requests; inactive recall/weather/journal modules. No fake safety alerts or conditions.

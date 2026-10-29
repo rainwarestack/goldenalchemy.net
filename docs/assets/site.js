@@ -20,16 +20,64 @@
     info.showModal();
   }
   $$('[data-community]').forEach(button => button.addEventListener('click', () => showInfo('The guild is taking shape.', ['Member accounts, profiles, uploads, and chat are coming in a future phase. Sign-in is not available yet.', 'Every public username will begin with chef. No registration details are being collected.'])));
-  $$('[data-policy]').forEach(button => button.addEventListener('click', () => showInfo('Privacy & site information', ['This first version does not offer accounts, collect form submissions, or process payments. No analytics or location tracking have been added.', 'Public Instagram posts are refreshed through a secure scheduled workflow. Access credentials are never included in the website.', 'Google Fonts and Unsplash provide fonts and editorial photography and may receive normal connection information such as your IP address. Instagram and TikTok open only when you follow their links.', 'Editorial imagery is illustrative and is not presented as Chef Rain’s past work. The gallery is reserved for Chef Rain’s connected uploads.', 'For questions, contact @goldenalchemy.na on Instagram.'])));
+  $$('[data-policy]').forEach(button => button.addEventListener('click', () => showInfo('Privacy & site information', ['This first version does not offer accounts, collect form submissions, or process payments. No analytics or location tracking have been added.', 'Public Instagram posts are refreshed through a secure scheduled workflow. Access credentials are never included in the website.', 'Google Fonts and Unsplash provide fonts and editorial photography and may receive normal connection information such as your IP address. The optional TikTok preview contacts TikTok only after you click Load TikTok preview. TikTok may then receive your IP address and use cookies under its own policies. Social links open their respective services when followed.', 'Editorial imagery is illustrative and is not presented as Chef Rain’s past work. The gallery is reserved for Chef Rain’s connected uploads.', 'For questions, contact @goldenalchemy.na on Instagram.'])));
   $$('dialog').forEach(dialog => {
     $('.dialog-close', dialog)?.addEventListener('click', () => dialog.close());
     dialog.addEventListener('click', e => { if (e.target === dialog) { const r = dialog.getBoundingClientRect(); if(e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) dialog.close(); } });
     dialog.addEventListener('close', () => { $$('video', dialog).forEach(video => video.pause()); });
   });
   $('#recipe-preview')?.addEventListener('submit', e => { e.preventDefault(); $('#recipe-message').textContent = 'Recipe discovery is coming soon. Search is not connected yet; your entry has not been sent anywhere.'; });
+  const tiktokButton = $('#load-tiktok');
+  tiktokButton?.addEventListener('click', () => {
+    const mount = $('#tiktok-mount'), profile = mount.dataset.profile;
+    if (!/^[a-zA-Z0-9._]{1,24}$/.test(profile)) return;
+    const url = `https://www.tiktok.com/@${profile}`;
+    const status = $('#tiktok-status');
+    tiktokButton.disabled = true; tiktokButton.textContent = 'Loading TikTok…';
+    status.textContent = 'Connecting to TikTok. The profile link below is always available.';
+    const quote = document.createElement('blockquote');
+    quote.className = 'tiktok-embed'; quote.setAttribute('cite', url);
+    quote.dataset.uniqueId = profile; quote.dataset.embedType = 'creator'; quote.dataset.embedFrom = 'oembed';
+    const section = document.createElement('section'), link = document.createElement('a');
+    link.href = url; link.textContent = `@${profile}`; link.target = '_blank'; link.rel = 'noopener noreferrer';
+    section.append(link); quote.append(section); mount.append(quote);
+    const observer = new MutationObserver(() => {
+      const iframe = $('iframe', mount);
+      if (!iframe) return;
+      iframe.title = 'Golden Alchemy TikTok creator profile and recent videos';
+      const loaded = () => { status.textContent = 'TikTok preview loaded. Content availability is managed by TikTok.'; tiktokButton.hidden = true; observer.disconnect(); clearTimeout(timer); };
+      iframe.addEventListener('load', loaded, { once:true });
+      observer.disconnect();
+    });
+    observer.observe(mount, {childList:true, subtree:true});
+    const failure = () => { status.textContent = 'TikTok could not load the preview. Use the profile link below to watch the latest videos.'; tiktokButton.hidden = true; observer.disconnect(); };
+    const timer = setTimeout(failure, 20000);
+    const script = document.createElement('script'); script.src = 'https://www.tiktok.com/embed.js'; script.async = true;
+    script.onerror = () => { clearTimeout(timer); failure(); }; document.body.append(script);
+  });
   if (!$('#media-grid')) return;
   let posts = [], filter = 'all';
   const status = $('#gallery-status'), grid = $('#media-grid'), timestamp = $('#feed-timestamp');
+  function renderActivity(failed = false) {
+    const feed = $('#activity-feed'); if (!feed) return;
+    feed.replaceChildren();
+    const dated = posts.filter(p => Number.isFinite(Date.parse(p.timestamp))).sort((a,b) => Date.parse(b.timestamp)-Date.parse(a.timestamp)).slice(0,5);
+    if (!dated.length) {
+      const p = document.createElement('p'); p.className = 'activity-empty';
+      p.textContent = failed ? 'Kitchen updates are temporarily unavailable. Visit Instagram for the latest.' : 'The kitchen is ready for its first updates. New Instagram uploads will appear here.';
+      feed.append(p); return;
+    }
+    const list = document.createElement('ol'); list.className = 'activity-list';
+    dated.forEach(post => {
+      const item = document.createElement('li'), a = document.createElement('a'), time = document.createElement('time'), type = document.createElement('span');
+      a.href = safeUrl(post.permalink,true); a.target = '_blank'; a.rel = 'noopener noreferrer';
+      a.textContent = (post.caption || 'A new creation from Chef Rain').split('\n')[0].slice(0,100);
+      time.dateTime = new Date(post.timestamp).toISOString(); time.textContent = new Date(post.timestamp).toLocaleDateString([], {month:'short',day:'numeric',year:'numeric'});
+      type.className = 'media-type'; type.textContent = `INSTAGRAM / NEW ${post.media_type === 'VIDEO' ? 'VIDEO' : 'PHOTO'}`;
+      item.append(time,type,a); list.append(item);
+    });
+    feed.append(list);
+  }
   function safeUrl(raw, instagramOnly = false) {
     try { const u = new URL(raw); return u.protocol === 'https:' && (!instagramOnly || ['instagram.com', 'www.instagram.com'].includes(u.hostname)) ? u.href : null; } catch { return null; }
   }
@@ -84,10 +132,10 @@
       const data = await response.json();
       if (data.username !== 'goldenalchemy.na' || !Array.isArray(data.items)) throw new Error('Unexpected feed');
       posts = data.items.filter(p => p && ['IMAGE','VIDEO','CAROUSEL_ALBUM'].includes(p.media_type) && safeUrl(p.permalink, true));
-      render();
+      render(); renderActivity();
       const date = new Date(data.updatedAt);
       if (!Number.isNaN(date.getTime())) { const stale = Date.now() - date.getTime() > 86400000; timestamp.textContent = `${stale ? 'Updates delayed · ' : ''}Instagram · Last refreshed ${date.toLocaleString([], {dateStyle:'medium',timeStyle:'short'})}${stale ? '. Showing the last available collection.' : ''}`; }
-    } catch { empty('The kitchen feed is taking a moment.', 'We couldn’t load the gallery. You can still find Chef Rain’s latest work on Instagram.', true); }
+    } catch { posts = []; renderActivity(true); empty('The kitchen feed is taking a moment.', 'We couldn’t load the gallery. You can still find Chef Rain’s latest work on Instagram.', true); }
   }
   load();
 })();

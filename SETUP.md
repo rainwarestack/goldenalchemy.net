@@ -2,6 +2,8 @@
 
 ## Current appearance milestone — 2026-10-29
 
+Integration phase begins with Instagram per owner steering. Latest activity added using the existing public Instagram feed; sorting and photo/video filter independence checked with a temporary local fixture that was removed before publication. Mobile checked at 390px. Public source inventory corrected to connected Instagram. TikTok official oEmbed verified the current public @goldenalchemy.net profile, but owner explicitly prioritizes Instagram and plans TikTok handle @goldenalchemy.na within seven days. Optional creator embed adapter prepared but not mounted or loaded. Track future work in INTEGRATIONS.md; no additional services/accounts/credentials purchased or configured.
+
 The Instagram workflow run 40920475616 succeeded after the user saved META_PAGE_ACCESS_TOKEN in the Golden Alchemy repository. Public feed verified at https://www.goldenalchemy.net/data/instagram.json for goldenalchemy.na, initially with no posts. DNS and Enforce HTTPS verified. Credentials are not stored locally.
 
 Built five static pages from the user's supplied design brief using scripts/build_site.py. Shared CSS/JS in docs/assets. The homepage reads the existing deployed Instagram feed; future integrations and social/backend features remain explicitly deferred. Responsive checks passed at 390px and desktop; gallery failure/retry state, navigation, community availability dialog, and recipe preview checked. Editorial imagery is illustrative Unsplash photography, with provider information in the footer dialog. Local Git history initialized from origin/main without overwriting working files; appearance branch codex/appearance. The chronological notes below describe earlier setup stages.

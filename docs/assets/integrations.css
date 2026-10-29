@@ -1,0 +1,23 @@
+/* Shared source modules. TikTok styles remain dormant until the handle changes. */
+[hidden]{display:none!important}
+.activity-section{padding-block:0 85px;display:grid;grid-template-columns:1fr 1.25fr;gap:80px;align-items:start}
+.activity-section>.muted,.activity-section p.muted{font-size:14px;margin-top:17px}
+.activity-empty{border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font-size:15px}
+.activity-list{padding:0;margin:0;list-style:none}
+.activity-list li{padding:20px 0;border-top:1px solid var(--line);position:relative}
+.activity-list time{float:right;font-size:10px;color:var(--muted);margin-left:15px}
+.activity-list .media-type{margin:0 0 9px;color:#92501e}
+.activity-list a{font-size:18px;display:block;line-height:1.5}
+.activity-list a:hover{color:var(--copper)}
+.social-content{border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1.25fr;gap:80px}
+.tiktok-intro>p:not(.eyebrow){font-size:15px;color:var(--muted);margin-top:25px}
+.tiktok-intro>.embed-disclosure{font-size:12px!important;max-width:350px}
+.tiktok-panel{min-width:0;border:1px solid var(--line);padding:26px;background:#f5e6cf}
+.tiktok-panel h3{font-family:var(--display);font-size:34px}
+.tiktok-panel p{font-size:14px;color:var(--muted);margin-top:18px}
+.tiktok-panel .button{margin-top:25px}
+.tiktok-panel .tiktok-embed{min-width:0!important;max-width:100%!important;margin:20px 0 0}
+.tiktok-panel iframe{max-width:100%;border:0}
+.embed-fallback{display:block;margin-top:20px;font-size:11px;text-decoration:underline;text-underline-offset:4px}
+@media(max-width:800px){.activity-section,.social-content{gap:35px}.activity-list a{font-size:16px}.activity-list time{float:none;display:block;margin:0 0 8px}}
+@media(max-width:560px){.activity-section,.social-content{grid-template-columns:1fr;gap:30px}.activity-section{padding-bottom:65px}.tiktok-panel{padding:18px}}

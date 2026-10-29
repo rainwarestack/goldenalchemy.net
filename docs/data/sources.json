@@ -6,14 +6,19 @@
       "platform": "instagram",
       "handle": "goldenalchemy.na",
       "url": "https://www.instagram.com/goldenalchemy.na/",
-      "status": "authorization_pending"
+      "status": "connected",
+      "feed": "/data/instagram.json",
+      "updates": "hourly_github_actions",
+      "modules": ["gallery", "latest_activity"]
     },
     {
       "platform": "tiktok",
       "handle": "goldenalchemy.net",
       "url": "https://www.tiktok.com/@goldenalchemy.net",
-      "status": "authorization_pending",
-      "handleChangeExpected": true
+      "status": "deferred_until_handle_change",
+      "handleChangeExpected": true,
+      "plannedHandle": "goldenalchemy.na",
+      "plannedMethod": "official_creator_embed_click_to_load"
     }
   ],
   "rss": [],
