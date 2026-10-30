@@ -33,7 +33,11 @@ YouTube and blog/newsletter/RSS URLs have not been supplied; optional sources re
 
 ## Phase 3: community
 
-Choose and authorize a Golden Alchemy-specific authentication/database/media provider. Build case-insensitive unique chef-prefixed usernames, independent account IDs, profiles, storage, moderation/reporting/blocking, likes/comments, then secure chat. Do not claim persistence until implemented. Account creation, permissions, and any paid services require the owner's participation/approval where applicable.
+Supabase chosen by the owner. Dedicated Golden Alchemy Free project fnjsbsoavsjnftbmmbtr created. Identity/profile schema applied with explicit owner approval; live rollback-only tests verified RLS, private profiles, chef-prefixed case-insensitive unique usernames, immutable account IDs and administration-only membership entitlements. Anonymous REST and membership RPC access is denied. /account/ provides sign-in, email confirmation, password recovery, sign-out, and private profile editing. Membership is not granted on signup. Owner-driven email confirmation/profile verification remains the final end-to-end check.
+
+Resend selected from the owner's existing account for transactional auth email. auth.goldenalchemy.net verified via three approved DNS additions. Owner created/pasted the sending credential privately into Supabase SMTP and confirmed saving; persisted enabled/host/port/sender-name settings verified. No secret is in source. No marketing email or automated test email was sent by the agent. Account confirmations/resets occur only when a user requests them.
+
+Still pending: membership launch and billing, public/member profile discovery, storage/uploads, photo editing, moderation/reporting/blocking, likes/comments, and secure chat. Do not claim those functions are connected merely because Supabase supports them. No paid plans added.
 
 ## Phase 4: commerce
 

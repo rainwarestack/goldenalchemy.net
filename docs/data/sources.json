@@ -25,6 +25,19 @@
   ],
   "rss": [],
   "youtube": null,
+  "community": {
+    "provider": "Supabase",
+    "projectRef": "fnjsbsoavsjnftbmmbtr",
+    "accountRoute": "/account/",
+    "status": "configured_pending_owner_email_confirmation_test",
+    "profiles": "private_to_owner",
+    "membership": "administration_only_not_open",
+    "transactionalEmail": {
+      "provider": "Resend",
+      "domain": "auth.goldenalchemy.net",
+      "status": "smtp_saved_domain_verified"
+    }
+  },
   "oracle": {
     "recalls": {
       "provider": "openFDA",

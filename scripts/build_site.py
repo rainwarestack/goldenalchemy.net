@@ -1,6 +1,7 @@
 """Build Golden Alchemy's static pages. No dependencies or secrets required."""
 from pathlib import Path
 from html import escape
+from account_page import account
 
 ROOT = Path(__file__).resolve().parents[1] / 'docs'
 NAV = [('home', 'Home'), ('forum', 'Forum'), ('theoracle', 'The Oracle'), ('marketplace', 'Marketplace'), ('about', 'About')]
@@ -61,6 +62,7 @@ def about():
 PAGES = {'home':(home,'Simple Ingredients. Extraordinary Possibilities.','Chef Rain’s culinary world. Discover the philosophy, latest creations, and future community of Golden Alchemy.'),'forum':(forum,"Chef Rain’s Guild",'A future culinary community for chefs of all kinds. Explore the Golden Alchemy guild.'),'theoracle':(oracle,'Global News Feed','Recipe discovery, seasonal inspiration, and food information. Explore the future Culinary Oracle.'),'marketplace':(marketplace,'Chef Rain’s Marketplace','Explore planned culinary services in New York, cookbooks, and signature seasonings by Golden Alchemy.'),'about':(about,"The Artisan’s Story",'Meet the idea behind Golden Alchemy and connect with Chef Rain on Instagram.')}
 
 def build():
+    PAGES['account'] = (account, 'Your Chef Account', 'Manage your Golden Alchemy chef account and private profile.')
     for element in ('fire', 'water', 'earth', 'air'):
         # Keep the article area empty until the owner starts the editorial phase.
         PAGES[element] = (lambda: '<section class="element-placeholder wrap" style="min-height:35vh" aria-label="Future element articles"></section>', element.title(), 'Golden Alchemy culinary elements.')
@@ -70,6 +72,10 @@ def build():
         document=f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#2A1A0E"><title>{escape(title)} | Golden Alchemy</title><meta name="description" content="{escape(description)}"><link rel="canonical" href="https://www.goldenalchemy.net/{slug}/"><meta property="og:title" content="{escape(title)} | Golden Alchemy"><meta property="og:description" content="{escape(description)}"><meta property="og:type" content="website"><link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Outfit:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="/assets/site.css"><script src="/assets/site.js" defer></script></head><body>{header(slug)}<main id="main">{render()}</main>{footer()}<dialog id="info-dialog" aria-labelledby="dialog-title"><button class="dialog-close" aria-label="Close dialog">×</button><p class="eyebrow">GOLDEN ALCHEMY</p><h2 id="dialog-title"></h2><div id="dialog-content"></div></dialog><dialog id="media-dialog" aria-label="Gallery media"><button class="dialog-close" aria-label="Close media">×</button><div id="media-content"></div></dialog></body></html>'''
         document = document.replace('<script src="/assets/site.js"', '<link rel="stylesheet" href="/assets/integrations.css"><script src="/assets/site.js"')
         document = document.replace('>TikTok ↗</a>', '>TikTok — Extended videos ↗</a>')
+        document = document.replace('<button class="signin" data-community>Sign in <span aria-hidden="true">↗</span></button>', '<a class="signin" href="/account/">Sign in <span aria-hidden="true">↗</span></a>')
+        document = document.replace('<button class="button" data-community>Account availability →</button>', '<a class="button" href="/account/">Your chef account →</a>')
+        if slug == 'account':
+            document = document.replace('</head>', '<meta name="robots" content="noindex"><meta name="referrer" content="no-referrer"><link rel="stylesheet" href="/assets/account.css"><script src="/assets/vendor/supabase.js" defer></script><script src="/assets/account.js" defer></script></head>')
         if slug == 'home':
             document = document.replace('</head>', '<link rel="stylesheet" href="/assets/home.css"></head>')
         if slug in ('fire', 'water', 'earth', 'air'):

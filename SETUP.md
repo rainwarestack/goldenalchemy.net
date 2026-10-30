@@ -1,5 +1,11 @@
 # Golden Alchemy setup status
 
+## Account connection — 2026-10-30
+
+Dedicated Supabase project Golden Alchemy / fnjsbsoavsjnftbmmbtr (Free, us-east-1) created by owner. Pre-existing unrelated paused project untouched. Owner approved the identity migration; applied successfully. Live SQL tests passed and rolled back fixtures: profile isolation/owner editing, immutable UUID, chef-prefix/unique casefold, admin-only membership grants/edits, anonymous denial. Public client and REST/RPC access checks passed. Actual website account/profile UI prepared at /account/ with pinned vendored official SDK 2.118.0, PKCE, persistent browser sessions, email confirmation and recovery, sign-out, private profile editing. No automatic membership entitlement.
+
+Owner approved auth.goldenalchemy.net Resend sending setup. Added only its TXT DKIM + two sending CNAME records in Namecheap; website A/www and mail-forwarding SPF preserved; receiving remains disabled. Resend verified the subdomain. Owner created the sending key and pasted it privately into Supabase SMTP, then reported SMTP saved. Reload confirmed enabled smtp.resend.com:465 and Golden Alchemy sender name. Password never read or written by agent. Site URL + exact redirects set to production /account/ and recovery query. SDK and public config contain only intentional publishable key, never admin/SMTP secrets. Desktop/mobile account UI checked without submitting credentials. Pending owner-driven actual signup/email confirmation/private-profile check after deployment.
+
 ## Homepage copy revision — 2026-10-30
 
 Owner supplied detailed homepage edits. Reworked copy professionally while preserving intent: Simple Ingredients / Extraordinary Possibilities hero; Epistemology & Aesthetics philosophy; Chef Rain's Guild, Global News Feed, Chef Rain's Marketplace previews with working links and clear planned-feature labels. Gallery and Latest activity removed from homepage; collector/configuration retained. Social closing/footer revised. Four element tiles now link to intentionally blank article areas; owner technique lists saved in content/element-topics.json for a later editorial gallery phase. Previous FDA/weather deployment 41102389718 confirmed successful.

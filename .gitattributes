@@ -1,0 +1,2 @@
+# Preserve the verified upstream SDK bytes, including template-string whitespace.
+docs/assets/vendor/supabase.js -text -whitespace linguist-vendored

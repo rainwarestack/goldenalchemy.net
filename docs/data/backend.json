@@ -1,0 +1,8 @@
+{
+  "project": "golden-alchemy",
+  "projectRef": "fnjsbsoavsjnftbmmbtr",
+  "supabaseUrl": "https://fnjsbsoavsjnftbmmbtr.supabase.co",
+  "publishableKey": "sb_publishable_pRl1Aut-aw6shkhuJG0muw_g-_OGSne",
+  "authEnabled": true,
+  "signupEnabled": true
+}
