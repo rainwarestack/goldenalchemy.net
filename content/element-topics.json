@@ -1,0 +1,9 @@
+{
+  "status": "editorial_plan_only",
+  "layout": "future_picture_gallery_of_guides_tutorials_and_history",
+  "note": "Owner requested blank element pages for now. Do not auto-publish articles or enable a feed until the next editorial phase.",
+  "fire": ["grilling", "flame roasting", "torching", "flambéing", "ember roasting", "charring", "broiling", "spit roasting", "low and slow barbecue", "fireside roasting", "hot smoking", "cold smoking", "smoke roasting", "smoke infusion", "tandoor cooking", "wood-fired baking", "pan frying", "deep frying", "griddling", "pan roasting", "toasting", "blackening"],
+  "water": ["boiling", "simmering", "poaching", "blanching", "coddling", "bain-marie", "sous vide", "blanch and shock", "stewing", "braising", "stock making", "broth making", "decoction", "liquid reduction", "congee cooking", "steaming", "pressure steaming", "soaking", "brining", "curing", "pickling"],
+  "earth": ["earth oven", "pachamanca", "Māori hāngī", "imu cooking", "barbacoa de pozo", "lovo", "umu", "mumu", "curanto en hoyo", "pit clambake", "pit baking", "hot stone", "stone griddle", "stone boiling", "salt block cooking", "stone bed", "stone covered", "soapstone", "lava stone", "tagine cooking", "clay pot roasting", "handi cooking", "ceramic", "terracotta", "dry salting", "salt packing", "salt dehydration", "salt bed", "hot sand cooking", "sand roasting", "ash baking", "stone grinding", "mortar and pestle"],
+  "air": ["air frying", "convection roasting", "convection baking", "air drying", "forced-air dehydration", "sun drying", "wind drying", "whipping", "creaming", "foaming", "whisking", "beating", "folding", "sifting", "frothing", "yeast leavening", "sourdough fermentation", "chemical leavening", "steam leavening", "carbonation", "beverage aeration", "circulation", "dehydration", "aeration", "expansion"]
+}

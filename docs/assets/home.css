@@ -1,0 +1,18 @@
+/* October 30 homepage revision: clearer positioning and linked element tiles. */
+.revised-hero h1{font-size:clamp(60px,6.1vw,91px);line-height:.96;max-width:850px}
+.revised-hero .hero-content{padding-top:65px}
+.revised-hero .hero-content>p:not(.eyebrow){max-width:525px;font-size:16px;line-height:1.65;margin-top:23px}
+.revised-hero .hero-actions{margin-top:25px}
+.revised-hero{height:720px;min-height:650px;max-height:none}
+.element{display:block;transition:background .2s}
+a.element:hover{background:#efdcba}.element-arrow{position:absolute;right:18px;top:17px;color:#9d591f;font-size:14px}
+a.element:focus-visible{outline:3px solid var(--copper);outline-offset:-3px}
+.realm-introduction{max-width:1000px;line-height:1.8}
+.realm-introduction a{text-decoration:underline;text-underline-offset:4px;color:#865024}
+.section-heading .realm-phase-note{font-size:12px;color:var(--muted);margin-top:14px}
+.realm-status{display:block;font-size:10px;line-height:1.5;color:#8a5427;margin-top:18px;padding-top:14px;border-top:1px solid #d4bc99}
+.realm-copy h3{font-size:34px}.realm-copy .underlink{margin-top:15px}
+.realm-copy{display:flex;flex-direction:column;flex:1}.realm-card{display:flex;flex-direction:column}
+.realm-copy .realm-status{margin-top:auto;padding-top:14px}.realm-copy>p:not(.eyebrow){margin-bottom:22px}
+@media(max-width:800px){.revised-hero .hero-content{padding-top:65px}.revised-hero h1{font-size:74px}.revised-hero{height:700px;min-height:0}.realm-copy h3{font-size:29px}}
+@media(max-width:560px){.revised-hero{height:710px}.revised-hero .hero-content{padding-top:60px}.revised-hero h1{font-size:51px}.revised-hero .hero-content>p:not(.eyebrow){font-size:14px;max-width:330px;margin-top:23px;line-height:1.75}.revised-hero .hero-actions{margin-top:23px}.realm-copy h3{font-size:36px}.realm-introduction{font-size:14px!important}}

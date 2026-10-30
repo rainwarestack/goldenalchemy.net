@@ -16,6 +16,8 @@ Updated 2026-10-30. Exclusive to rainwarestack/goldenalchemy.net and www.goldena
 
 Instagram @goldenalchemy.na is connected. Existing workflow fetches up to 12 recent posts hourly at minute 17, as well as on relevant pushes and manual runs. Gallery and latest activity read that single public feed. Activity uses actual upload timestamps, not the collection time. No fabricated uploads or events appear. Scheduling can be delayed by GitHub.
 
+Homepage revision 2026-10-30: owner removed the gallery and Latest activity sections. The collector remains configured, but the homepage now uses social profile links only and makes no Instagram feed request. Retained gallery code can be reused in a future designated section.
+
 Owner confirmed on 2026-10-30 that their real Instagram post appears on the site. Instagram is verified end to end. No content is posted on the owner's behalf.
 
 TikTok is explicitly deferred until the owner changes @goldenalchemy.net to @goldenalchemy.na, expected within seven days. Do not change links early. Official creator-profile embed adapter is prepared but not mounted; there are no TikTok embed requests on page load. Once confirmed, update all profile links and render a click-to-load creator block with a permanent direct-link fallback. No secret or developer app is required for that embed. It is separate from the normalized gallery/activity feed. A combined TikTok feed requires Display API, Login Kit approval, owner OAuth, and secure token refresh; do not represent an embed as that connection.
@@ -47,3 +49,7 @@ Keep Instagram inquiries initially. Confirm actual offerings, pricing, availabil
 - National Weather Service API: https://www.weather.gov/documentation/services-web-api
 
 The integration table is a roadmap, not a claim that every provider is connected. Proceed in stages, using existing infrastructure before adding services.
+
+## Element article galleries
+
+The homepage's Fire, Water, Earth, and Air tiles link to /fire/, /water/, /earth/, and /air/. The article areas are intentionally blank, with noindex metadata until content is ready. Owner-supplied technique keywords are preserved and spelling normalized in content/element-topics.json. Future editorial galleries should focus on attributed guides, tutorials, and history, with pictures and original-source links. No source subscriptions, article scraping, or embedded article feeds have been activated.

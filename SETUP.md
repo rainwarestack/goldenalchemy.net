@@ -1,5 +1,9 @@
 # Golden Alchemy setup status
 
+## Homepage copy revision — 2026-10-30
+
+Owner supplied detailed homepage edits. Reworked copy professionally while preserving intent: Simple Ingredients / Extraordinary Possibilities hero; Epistemology & Aesthetics philosophy; Chef Rain's Guild, Global News Feed, Chef Rain's Marketplace previews with working links and clear planned-feature labels. Gallery and Latest activity removed from homepage; collector/configuration retained. Social closing/footer revised. Four element tiles now link to intentionally blank article areas; owner technique lists saved in content/element-topics.json for a later editorial gallery phase. Previous FDA/weather deployment 41102389718 confirmed successful.
+
 ## Oracle integration — 2026-10-30
 
 Owner chose free U.S. weather before TheMealDB production key setup. NWS collector and module added for NYC/Albany/Buffalo, using existing hourly deployment. No key, subscription, or location tracking. City/F-C controls, true provider/retrieval dates, expiring-period filtering, and per-city failure/stale handling. Three real city forecasts fetched successfully locally; provider-returned URLs constrained to api.weather.gov gridpoint forecasts. Four tests cover allowlist, rejecting untrusted URL, stale fallback date preservation, and invalid temperatures/units.

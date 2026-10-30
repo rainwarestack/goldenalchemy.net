@@ -17,6 +17,8 @@ Visit http://localhost:4173/home/. Five static route directories support direct 
 
 ## Customize
 
+The October 30 homepage wording is in `scripts/home_page.py`. Edit that module, then run `python scripts/build_site.py`. The homepage no longer includes the Instagram gallery or Latest activity, at the owner's request; social profile links remain. Instagram collection remains configured for future use. Four element tiles lead to intentionally empty article areas (with shared navigation) under /fire/, /water/, /earth/, and /air/. Future technique topics are stored in `content/element-topics.json`; no article feeds are enabled yet. Home-specific responsive adjustments are in `docs/assets/home.css`.
+
 - `scripts/build_site.py`: shared header/footer, layouts, copy, metadata, social URLs, and image references. Run the generator after editing; commit generated HTML in `docs/`.
 - `docs/assets/site.css`: design tokens and responsive/reduced-motion styles. Palette: #2A1A0E, #D4621A, #F4AE52, #FEF3E2. Bebas Neue headings and Outfit body via Google Fonts.
 - `docs/assets/site.js`: mobile menu, availability/privacy dialogs, recipe preview, gallery filters, and media lightbox. Feed content is rendered as text, never injected as markup.
