@@ -2,6 +2,8 @@
 
 ## Oracle integration — 2026-10-30
 
+Owner chose free U.S. weather before TheMealDB production key setup. NWS collector and module added for NYC/Albany/Buffalo, using existing hourly deployment. No key, subscription, or location tracking. City/F-C controls, true provider/retrieval dates, expiring-period filtering, and per-city failure/stale handling. Three real city forecasts fetched successfully locally; provider-returned URLs constrained to api.weather.gov gridpoint forecasts. Four tests cover allowlist, rejecting untrusted URL, stale fallback date preservation, and invalid temperatures/units.
+
 Owner verified Instagram post is appearing. Added openFDA food-enforcement collector to the existing scheduled/deployment workflow. Six recent records, official source links, dataset/retrieval dates, expanded product/reason/distribution/code information. Provider errors preserve a previous preview with stale status or show unavailable. No new credential, subscription, or external user account. Local fetched preview and generated production feed remain outside Git. Unit tests passed for live allowlist, missing recall number, stale fallback with preserved date, unavailable, and wrong product type. Desktop/mobile and keyboard expansion checked with real API data. Recipes/weather/community/commerce remain pending; TikTok waiting on handle change.
 
 ## Current appearance milestone — 2026-10-29

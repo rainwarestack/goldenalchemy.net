@@ -18,6 +18,18 @@
 .recall-list .underlink{margin-bottom:22px;margin-top:15px}
 .recall-source{display:block;font-size:10px;color:var(--muted);text-decoration:underline;margin-top:15px}
 .feed-warning{background:#e9c792;color:#69340c}
+.weather-controls{display:flex;justify-content:space-between;align-items:end;gap:18px;margin:25px 0}
+.weather-controls>div:first-child{flex:1;min-width:0}.weather-controls .filters{flex-wrap:nowrap;margin:0}
+.weather-controls select{font:inherit;font-size:13px;padding:12px;width:100%;border:1px solid var(--line);background:var(--paper);color:var(--cacao);min-height:45px}
+.weather-controls select:focus-visible{outline:2px solid var(--copper);outline-offset:3px}
+.weather-panel .panel-top{align-items:start;flex-direction:column;gap:10px}
+.weather-periods{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.weather-periods li{border-top:1px solid #b89c764d;padding-top:15px;min-width:0}
+.weather-period-name{display:block;font-size:11px;min-height:36px}.weather-temp{display:block;font-family:var(--display);font-size:44px;font-weight:400;line-height:1.3}
+.weather-condition{display:block;font-size:12px;line-height:1.5;margin-top:6px}.weather-wind{display:block;font-size:10px;color:var(--muted);margin-top:10px}
+.weather-periods details{font-size:10px;margin-top:15px}.weather-periods summary{cursor:pointer;text-decoration:underline;text-underline-offset:4px}
+.weather-periods details p{font-size:12px;margin-top:10px}.weather-panel .weather-note{font-size:11px;color:var(--muted)}
+@media(max-width:800px){.weather-controls{flex-wrap:wrap}.weather-controls>div:first-child{flex-basis:100%}.weather-periods{grid-template-columns:1fr}.weather-period-name{min-height:0}.weather-temp{font-size:38px}.weather-periods li{display:grid;grid-template-columns:1fr 1fr;gap:4px 15px}.weather-condition,.weather-wind,.weather-periods details{grid-column:1/-1}.weather-periods .weather-temp{text-align:right;grid-column:2;grid-row:1}}
 @media(max-width:560px){.recall-panel{grid-column:auto;grid-row:auto}.recall-title{font-size:14px}}
 [hidden]{display:none!important}
 .activity-section{padding-block:0 85px;display:grid;grid-template-columns:1fr 1.25fr;gap:80px;align-items:start}

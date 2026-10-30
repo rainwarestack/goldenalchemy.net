@@ -33,6 +33,13 @@
       "source": "https://open.fda.gov/apis/food/enforcement/"
     },
     "recipes": {"status": "pending_production_key"},
-    "weather": {"status": "provider_pending"}
+    "weather": {
+      "status": "connected",
+      "provider": "National Weather Service",
+      "feed": "/data/weather.json",
+      "updates": "hourly_github_actions",
+      "cities": ["New York City", "Albany, NY", "Buffalo, NY"],
+      "scope": "forecast_not_live_observations"
+    }
   }
 }

@@ -10,4 +10,5 @@ hosting-https-enabled.jpg
 __pycache__/
 docs/data/instagram.json
 docs/data/recalls.json
+docs/data/weather.json
 golden-alchemy-*-preview.png

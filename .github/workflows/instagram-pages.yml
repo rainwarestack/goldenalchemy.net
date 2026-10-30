@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ['docs/**', 'scripts/sync_instagram.py', 'scripts/sync_recalls.py', '.github/workflows/instagram-pages.yml']
+    paths: ['docs/**', 'scripts/sync_instagram.py', 'scripts/sync_recalls.py', 'scripts/sync_weather.py', '.github/workflows/instagram-pages.yml']
   schedule:
     - cron: '17 * * * *'
 
@@ -53,6 +53,8 @@ jobs:
         run: python scripts/sync_instagram.py
       - name: Refresh official FDA food-enforcement preview
         run: python scripts/sync_recalls.py
+      - name: Refresh National Weather Service city forecasts
+        run: python scripts/sync_weather.py
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

@@ -26,7 +26,7 @@ YouTube and blog/newsletter/RSS URLs have not been supplied; optional sources re
 
 - TheMealDB: recipe search and ingredient discovery. Free key 1 is for development/testing; official guide calls for a supporter production key for a publicly shipped application. No paid plan purchased or public production API enabled.
 - openFDA: connected to The Oracle. scripts/sync_recalls.py collects six recent food-enforcement records in the existing deployment workflow; no credential or new service required. Browser requests the local /data/recalls.json artifact, not the provider. Display report dates, FDA dataset date, retrieval time, classification, full product/reason/distribution/lot details, and exact FDA record links. It is a limited enforcement preview, not real-time alerts or comprehensive coverage. Provider failure restores the previous public preview with its original timestamp and a delayed label; no usable cache produces an unavailable state. Empty results never claim that there are no recalls. Five boundary tests in tests/test_recalls.py. Local fetched data is ignored and generated production data is artifact-only.
-- Weather: select a provider that permits this business website's use. Do not assume Open-Meteo's noncommercial free tier fits Golden Alchemy; pricing/licensing decision remains pending. City selection only; no automatic precise geolocation.
+- Weather: owner chose free weather before paid recipe access on 2026-10-30. National Weather Service (free open data for any purpose) connected for New York City, Albany, and Buffalo. scripts/sync_weather.py fetches provider point/forecast endpoints and publishes /data/weather.json as an ignored, deployment-only artifact. Each city has independent ready/stale/unavailable status, original retrieval/provider timestamps, and a direct NWS source link. No location tracking or API key. City selector and F/C conversion run locally; expired forecast periods are hidden. UI labels forecasts, not live observations. Failed calls fall back to the previous public preview with original dates. Arbitrary forecast hosts are rejected. No Open-Meteo commercial plan used or purchased.
 - RSS/journal: select owner-approved sources and display attributed headlines/links rather than republishing articles.
 
 ## Phase 3: community
@@ -44,5 +44,6 @@ Keep Instagram inquiries initially. Confirm actual offerings, pricing, availabil
 - YouTube uploads playlist: https://developers.google.com/youtube/data/guides/implementation/videos
 - TheMealDB production guidance: https://www.themealdb.com/docs_api_guide.php
 - Open-Meteo service terms: https://open-meteo.com/en/terms
+- National Weather Service API: https://www.weather.gov/documentation/services-web-api
 
 The integration table is a roadmap, not a claim that every provider is connected. Proceed in stages, using existing infrastructure before adding services.
