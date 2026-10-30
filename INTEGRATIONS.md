@@ -1,6 +1,6 @@
 # Golden Alchemy integration roadmap
 
-Updated 2026-10-29. Exclusive to rainwarestack/goldenalchemy.net and www.goldenalchemy.net. Never reuse xbtesports resources.
+Updated 2026-10-30. Exclusive to rainwarestack/goldenalchemy.net and www.goldenalchemy.net. Never reuse xbtesports resources.
 
 ## Shared organization
 
@@ -16,7 +16,7 @@ Updated 2026-10-29. Exclusive to rainwarestack/goldenalchemy.net and www.goldena
 
 Instagram @goldenalchemy.na is connected. Existing workflow fetches up to 12 recent posts hourly at minute 17, as well as on relevant pushes and manual runs. Gallery and latest activity read that single public feed. Activity uses actual upload timestamps, not the collection time. No fabricated uploads or events appear. Scheduling can be delayed by GitHub.
 
-Next owner verification: publish an actual photo or Reel on Instagram, run the workflow manually (or await its schedule), and verify the real item in both modules. No content is posted on the owner's behalf.
+Owner confirmed on 2026-10-30 that their real Instagram post appears on the site. Instagram is verified end to end. No content is posted on the owner's behalf.
 
 TikTok is explicitly deferred until the owner changes @goldenalchemy.net to @goldenalchemy.na, expected within seven days. Do not change links early. Official creator-profile embed adapter is prepared but not mounted; there are no TikTok embed requests on page load. Once confirmed, update all profile links and render a click-to-load creator block with a permanent direct-link fallback. No secret or developer app is required for that embed. It is separate from the normalized gallery/activity feed. A combined TikTok feed requires Display API, Login Kit approval, owner OAuth, and secure token refresh; do not represent an embed as that connection.
 
@@ -25,7 +25,7 @@ YouTube and blog/newsletter/RSS URLs have not been supplied; optional sources re
 ## Phase 2: discovery
 
 - TheMealDB: recipe search and ingredient discovery. Free key 1 is for development/testing; official guide calls for a supporter production key for a publicly shipped application. No paid plan purchased or public production API enabled.
-- openFDA: official food-enforcement feed with report dates, classification, reason, distribution, source links, loading/stale/failure states. Do not generate fictional recall entries.
+- openFDA: connected to The Oracle. scripts/sync_recalls.py collects six recent food-enforcement records in the existing deployment workflow; no credential or new service required. Browser requests the local /data/recalls.json artifact, not the provider. Display report dates, FDA dataset date, retrieval time, classification, full product/reason/distribution/lot details, and exact FDA record links. It is a limited enforcement preview, not real-time alerts or comprehensive coverage. Provider failure restores the previous public preview with its original timestamp and a delayed label; no usable cache produces an unavailable state. Empty results never claim that there are no recalls. Five boundary tests in tests/test_recalls.py. Local fetched data is ignored and generated production data is artifact-only.
 - Weather: select a provider that permits this business website's use. Do not assume Open-Meteo's noncommercial free tier fits Golden Alchemy; pricing/licensing decision remains pending. City selection only; no automatic precise geolocation.
 - RSS/journal: select owner-approved sources and display attributed headlines/links rather than republishing articles.
 

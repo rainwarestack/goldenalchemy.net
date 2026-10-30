@@ -22,5 +22,17 @@
     }
   ],
   "rss": [],
-  "youtube": null
+  "youtube": null,
+  "oracle": {
+    "recalls": {
+      "provider": "openFDA",
+      "status": "connected",
+      "feed": "/data/recalls.json",
+      "updates": "hourly_github_actions",
+      "scope": "six_recent_food_enforcement_records",
+      "source": "https://open.fda.gov/apis/food/enforcement/"
+    },
+    "recipes": {"status": "pending_production_key"},
+    "weather": {"status": "provider_pending"}
+  }
 }

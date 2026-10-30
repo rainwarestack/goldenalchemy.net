@@ -1,5 +1,9 @@
 # Golden Alchemy setup status
 
+## Oracle integration — 2026-10-30
+
+Owner verified Instagram post is appearing. Added openFDA food-enforcement collector to the existing scheduled/deployment workflow. Six recent records, official source links, dataset/retrieval dates, expanded product/reason/distribution/code information. Provider errors preserve a previous preview with stale status or show unavailable. No new credential, subscription, or external user account. Local fetched preview and generated production feed remain outside Git. Unit tests passed for live allowlist, missing recall number, stale fallback with preserved date, unavailable, and wrong product type. Desktop/mobile and keyboard expansion checked with real API data. Recipes/weather/community/commerce remain pending; TikTok waiting on handle change.
+
 ## Current appearance milestone — 2026-10-29
 
 Integration phase begins with Instagram per owner steering. Latest activity added using the existing public Instagram feed; sorting and photo/video filter independence checked with a temporary local fixture that was removed before publication. Mobile checked at 390px. Public source inventory corrected to connected Instagram. TikTok official oEmbed verified the current public @goldenalchemy.net profile, but owner explicitly prioritizes Instagram and plans TikTok handle @goldenalchemy.na within seven days. Optional creator embed adapter prepared but not mounted or loaded. Track future work in INTEGRATIONS.md; no additional services/accounts/credentials purchased or configured.

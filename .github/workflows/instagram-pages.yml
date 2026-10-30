@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ['docs/**', 'scripts/sync_instagram.py', '.github/workflows/instagram-pages.yml']
+    paths: ['docs/**', 'scripts/sync_instagram.py', 'scripts/sync_recalls.py', '.github/workflows/instagram-pages.yml']
   schedule:
     - cron: '17 * * * *'
 
@@ -51,6 +51,8 @@ jobs:
         env:
           META_PAGE_ACCESS_TOKEN: ${{ secrets.META_PAGE_ACCESS_TOKEN }}
         run: python scripts/sync_instagram.py
+      - name: Refresh official FDA food-enforcement preview
+        run: python scripts/sync_recalls.py
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

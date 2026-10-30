@@ -1,4 +1,24 @@
 /* Shared source modules. TikTok styles remain dormant until the handle changes. */
+.recall-panel{grid-column:2;grid-row:1 / span 3;align-self:start;min-width:0}
+.recall-panel .panel-top{align-items:flex-start;flex-direction:column;gap:12px}
+.recall-panel .recall-context{font-size:12px;color:var(--muted);padding:14px;border-left:2px solid #b68b51;background:#ecd9b844}
+.recall-panel .source-note{line-height:1.8;margin-bottom:22px}
+.recall-list{list-style:none;margin:0;padding:0}
+.recall-list li{border-top:1px solid var(--line)}
+.recall-list summary{cursor:pointer;padding:20px 20px 20px 0;position:relative;list-style:none}
+.recall-list summary::-webkit-details-marker{display:none}
+.recall-list summary:after{content:'+';position:absolute;right:0;top:20px;color:#93501e;font-size:20px}
+.recall-list details[open]>summary:after{content:'−'}
+.recall-list summary:focus-visible{outline:2px solid var(--copper);outline-offset:3px}
+.recall-title{display:block;font-size:15px;font-weight:500;line-height:1.5;overflow-wrap:anywhere}
+.recall-meta{display:block;font-size:10px;color:var(--muted);margin-top:8px}
+.recall-list dl{margin:0;font-size:13px;line-height:1.65}
+.recall-list dt{font-weight:600;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#92501e;margin-top:16px}
+.recall-list dd{margin:4px 0 0;overflow-wrap:anywhere;white-space:pre-wrap}
+.recall-list .underlink{margin-bottom:22px;margin-top:15px}
+.recall-source{display:block;font-size:10px;color:var(--muted);text-decoration:underline;margin-top:15px}
+.feed-warning{background:#e9c792;color:#69340c}
+@media(max-width:560px){.recall-panel{grid-column:auto;grid-row:auto}.recall-title{font-size:14px}}
 [hidden]{display:none!important}
 .activity-section{padding-block:0 85px;display:grid;grid-template-columns:1fr 1.25fr;gap:80px;align-items:start}
 .activity-section>.muted,.activity-section p.muted{font-size:14px;margin-top:17px}
