@@ -22,3 +22,10 @@ html.motion-paused *,html.motion-paused *:before,html.motion-paused *:after{anim
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.alchemy-reveal.awaiting{opacity:1;transform:none}::view-transition-old(root),::view-transition-new(root){animation:none}}
 
 .hero,.hero-link,.menu-toggle,.editorial-panel,.market-banner>div{color:#f6f4ef}
+
+/* Golden signals replace directional emoji; they are decorative, never fake status claims. */
+.signal-dot{display:inline-block;vertical-align:middle;width:7px;height:7px;min-width:7px;border-radius:50%;background:#e8c681;box-shadow:0 0 6px #e8c681a0,0 0 15px #e8c68155;position:relative;margin-inline:7px;flex-shrink:0}
+.signal-dot:after{content:'';position:absolute;inset:-4px;border:1px solid #e8c68350;border-radius:50%;opacity:0;transform:scale(.7);transition:opacity .3s,transform .5s}
+a:hover .signal-dot:after,button:hover .signal-dot:after{opacity:1;transform:scale(1.3)}
+.button .signal-dot{background:#28251c;box-shadow:0 0 0 3px #29251b14,0 0 10px #fff8;margin-inline:0}.button .signal-dot:after{border-color:#28251c60}
+.card-arrow{background:none;border:0;width:22px;height:22px;bottom:18px;right:18px;filter:drop-shadow(0 0 5px #000)}.card-arrow .signal-dot{width:8px;height:8px;margin:0}.realm-card:hover .card-arrow{transform:none}.element-arrow .signal-dot{width:6px;height:6px;min-width:6px;margin:0}.social-links a>.signal-dot{margin-right:4px}.hero-link .signal-dot{margin-left:15px}.hero-bottom .signal-dot{width:5px;height:5px;min-width:5px}.footer-social .signal-dot{width:5px;height:5px;min-width:5px}

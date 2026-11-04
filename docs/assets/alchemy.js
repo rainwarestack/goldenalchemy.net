@@ -1,5 +1,27 @@
 (() => {
   'use strict';
+  // Keep dynamically updated account and source links consistent with the built pages.
+  function illuminateArrows(container) {
+    const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, {
+      acceptNode: node => /[↗→↓]/.test(node.textContent) && node.parentElement?.closest('a,button') && !node.parentElement?.closest('script,style') ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT
+    });
+    const nodes = []; while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(node => {
+      const pieces = node.textContent.split(/[↗→↓]/);
+      const fragment = document.createDocumentFragment();
+      pieces.forEach((text, index) => {
+        if (index) { const dot = document.createElement('span'); dot.className = 'signal-dot'; dot.setAttribute('aria-hidden', 'true'); fragment.append(dot); }
+        fragment.append(document.createTextNode(text));
+      });
+      node.replaceWith(fragment);
+    });
+  }
+  illuminateArrows(document.body);
+  const arrowObserver = new MutationObserver(records => records.forEach(record => {
+    if (record.type === 'characterData') illuminateArrows(record.target.parentElement);
+    else record.addedNodes.forEach(node => { if (node.nodeType === Node.ELEMENT_NODE) illuminateArrows(node); else if (node.nodeType === Node.TEXT_NODE && /[↗→↓]/.test(node.textContent)) illuminateArrows(node.parentElement); });
+  }));
+  arrowObserver.observe(document.body, {childList:true, subtree:true, characterData:true});
   const root = document.documentElement;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const read = key => { try { return sessionStorage.getItem(key); } catch { return null; } };

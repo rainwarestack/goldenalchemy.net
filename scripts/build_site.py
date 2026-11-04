@@ -93,6 +93,8 @@ def build():
         document = document.replace('</head>', '<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="/assets/alchemy.css"><script src="/assets/alchemy.js" defer></script></head>')
         if slug == 'marketplace':
             document = document.replace('</head>', '<meta name="robots" content="noindex"></head>')
+        for arrow in ('↗', '→', '↓'):
+            document = document.replace(arrow, '<span class="signal-dot" aria-hidden="true"></span>')
         (folder/'index.html').write_text(document,encoding='utf-8')
     (ROOT/'index.html').write_text('''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0;url=/home/"><link rel="canonical" href="https://www.goldenalchemy.net/home/"><title>Golden Alchemy</title><script>location.replace('/home/'+location.search+location.hash)</script></head><body><a href="/home/">Enter Golden Alchemy</a></body></html>''',encoding='utf-8')
     (ROOT/'404.html').write_text('''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Page not found | Golden Alchemy</title><link rel="stylesheet" href="/assets/site.css"><link rel="stylesheet" href="/assets/alchemy.css"></head><body><main class="wrap section"><p class="eyebrow">GOLDEN ALCHEMY / 404</p><h1>A little off the menu.</h1><p>We couldn’t find that page.</p><a class="button" href="/home/">Return to the kitchen →</a></main></body></html>''',encoding='utf-8')
