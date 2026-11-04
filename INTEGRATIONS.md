@@ -16,7 +16,7 @@ Updated 2026-10-30. Exclusive to rainwarestack/goldenalchemy.net and www.goldena
 
 Instagram @goldenalchemy.na is connected. Existing workflow fetches up to 12 recent posts hourly at minute 17, as well as on relevant pushes and manual runs. Gallery and latest activity read that single public feed. Activity uses actual upload timestamps, not the collection time. No fabricated uploads or events appear. Scheduling can be delayed by GitHub.
 
-Homepage revision 2026-10-30: owner removed the gallery and Latest activity sections. The collector remains configured, but the homepage now uses social profile links only and makes no Instagram feed request. Retained gallery code can be reused in a future designated section.
+Homepage revision 2026-10-30: owner removed the gallery and Latest activity sections. The homepage uses social profile links. The About page now mounts the automated Instagram gallery, with gold post frames and click-to-play videos. The collector follows pagination to include the account’s available media, refreshed by the existing hourly workflow.
 
 Owner confirmed on 2026-10-30 that their real Instagram post appears on the site. Instagram is verified end to end. No content is posted on the owner's behalf.
 

@@ -46,16 +46,29 @@ def main():
     profile = request_graph(INSTAGRAM_ID, {"fields": "id,username,media_count"}, token)
     if str(profile.get("id")) != INSTAGRAM_ID or profile.get("username") != USERNAME:
         raise RuntimeError("Account identity mismatch; refusing to publish another project's content.")
-    response = request_graph(INSTAGRAM_ID + "/media", {
-        "fields": "id,caption,media_type,media_url,thumbnail_url,permalink,timestamp", "limit": "12"
-    }, token)
-    if not isinstance(response.get("data"), list):
-        raise RuntimeError("Meta did not return a media list; existing deployment is preserved.")
+    items, seen_ids, seen_cursors = [], set(), set()
+    fields = {"fields": "id,caption,media_type,media_url,thumbnail_url,permalink,timestamp", "limit": "100"}
+    while True:
+        response = request_graph(INSTAGRAM_ID + "/media", fields, token)
+        if not isinstance(response.get("data"), list):
+            raise RuntimeError("Meta did not return a media list; existing deployment is preserved.")
+        for item in response["data"]:
+            if item.get("id") not in seen_ids:
+                items.append(media_item(item))
+                seen_ids.add(item.get("id"))
+        paging = response.get("paging", {})
+        if not paging.get("next"):
+            break
+        cursor = paging.get("cursors", {}).get("after")
+        if not cursor or cursor in seen_cursors or len(seen_cursors) >= 99:
+            raise RuntimeError("Unexpected Instagram pagination; existing deployment is preserved.")
+        seen_cursors.add(cursor)
+        fields["after"] = cursor
     feed = {
         "source": "instagram", "username": USERNAME,
         "profileUrl": "https://www.instagram.com/" + USERNAME + "/",
         "updatedAt": datetime.now(timezone.utc).isoformat(),
-        "items": [media_item(item) for item in response["data"][:12]],
+        "items": items,
     }
     serialized = json.dumps(feed, ensure_ascii=False, indent=2) + "\n"
     if token in serialized:

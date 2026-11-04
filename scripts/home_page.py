@@ -39,7 +39,7 @@ def render_home(image, eyebrow, instagram, tiktok):
         {eyebrow('CHEF RAIN’S KITCHEN · GOLDEN ALCHEMY')}
         <h1>CHEF RAIN'S:<br>GOLDEN ALCHEMY</h1>
         <p>Make your time in the kitchen more creative and less intimidating. Explore Golden Alchemy for practical tips, techniques, and recipe inspiration that bring confidence to your cooking and new life to every plate.</p>
-        <div class="hero-actions"><a class="button" href="#explore">Explore Golden Alchemy <span aria-hidden="true">↗</span></a><a class="hero-link" href="/about/">Meet Chef Rain <span aria-hidden="true">→</span></a></div>
+        <div class="hero-actions"><a class="hero-link" href="/about/">Meet Chef Rain <span aria-hidden="true">→</span></a></div>
       </div>
       <div class="hero-bottom wrap"><span>FIRE. FLAVOR. A LITTLE WONDER.</span><a href="#philosophy">SCROLL TO DISCOVER ↓</a></div>
     </section>
