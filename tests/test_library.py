@@ -19,4 +19,9 @@ class LibraryTests(unittest.TestCase):
         data=b'<rss><channel><item><title>&lt;b&gt;Grilling&lt;/b&gt;</title><link>https://barbecuebible.com/a</link><pubDate>oops</pubDate></item></channel></rss>'
         item=lib.parse_feed(data,{'host':'barbecuebible.com','name':'BBQ','defaultElement':'fire'},[],'now')[0]
         self.assertIsNone(item['publishedAt']);self.assertEqual(item['title'],'Grilling')
+    def test_thumbnail_uses_only_allowed_feed_image_hosts(self):
+        entry=lib.ET.fromstring('<item><description>&lt;img src="https://evil.example/image.jpg"&gt;&lt;img src="https://cdn.example/photo.jpg"&gt;</description></item>')
+        self.assertEqual(lib.thumbnail(entry,{'host':'publisher.example','imageHosts':['cdn.example']}),'https://cdn.example/photo.jpg')
+    def test_missing_thumbnail_is_optional(self):
+        self.assertIsNone(lib.thumbnail(lib.ET.fromstring('<item/>'),{'host':'publisher.example'}))
 if __name__=='__main__':unittest.main()

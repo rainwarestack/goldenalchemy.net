@@ -2,10 +2,10 @@
   'use strict';
   const page = document.querySelector('.element-library'); if (!page) return;
   const $ = s => page.querySelector(s), element = page.dataset.element;
-  const controls = {q:$('#resource-query'),method:$('#resource-method'),origin:$('#resource-origin'),kind:$('#resource-kind'),sort:$('#resource-sort')};
+  const controls = {q:$('#resource-query'),method:$('#resource-method'),kind:$('#resource-kind'),sort:$('#resource-sort')};
   const normalize = text => text.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
   const node = (tag, text, cls) => { const el=document.createElement(tag); el.textContent=text; if(cls)el.className=cls; return el; };
-  let records=[], limit=12;
+  let records=[], techniques=[], limit=12;
   const date = raw => { const n=Date.parse(raw); return Number.isFinite(n)?n:null; };
   function readUrl() {
     const params=new URLSearchParams(location.search);
@@ -14,9 +14,13 @@
   readUrl();
   function render() {
     const q=normalize(controls.q.value.trim());
-    const method=controls.method.value, origin=controls.origin.value,kind=controls.kind.value;
+    const method=controls.method.value,kind=controls.kind.value;
     const selected=[...controls.method.options].find(o=>o.value===method);
-    let visible=records.filter(r=> (!q||q.split(/\s+/).every(term=>normalize([r.title,r.publisher,r.summary,...r.tags,...(r.tools||[])].join(' ')).includes(term))) && (!method||r.tags.some(t=>normalize(t)===normalize(method))) && (!origin||r.origin===origin) && (!kind||r.kind===kind));
+    $('#resource-heading').textContent=method?selected.textContent+' resources.':'Related resources.';
+    const technique=techniques.find(t=>normalize(t.name)===normalize(method));
+    $('#selected-method-note').textContent=technique?technique.summary:'';
+    $('#library-all').hidden=!method;
+    let visible=records.filter(r=> (!q||q.split(/\s+/).every(term=>normalize([r.title,r.publisher,r.summary,...r.tags,...(r.tools||[])].join(' ')).includes(term))) && (!method||r.tags.some(t=>normalize(t)===normalize(method))) && (!kind||r.kind===kind));
     visible.sort((a,b)=>{
       if(controls.sort.value==='title')return a.title.localeCompare(b.title);
       const field=controls.sort.value==='added'?'addedAt':'publishedAt';
@@ -28,7 +32,14 @@
     visible.slice(0,limit).forEach(r=>{
       let url;try {url=new URL(r.url);if(url.protocol!=='https:')return;}catch{return;}
       const card=node('article','','resource-card');
-      card.append(node('p',`${r.origin} / ${r.kind}`,'eyebrow'));
+      if(r.thumbnail){
+        try {const imageUrl=new URL(r.thumbnail);if(imageUrl.protocol==='https:'){
+          const imageLink=node('a','','resource-image');imageLink.href=url.href;imageLink.target='_blank';imageLink.rel='noopener noreferrer';imageLink.tabIndex=-1;imageLink.setAttribute('aria-hidden','true');
+          const image=document.createElement('img');image.src=imageUrl.href;image.alt='';image.loading='lazy';image.decoding='async';image.referrerPolicy='no-referrer';image.width=640;image.height=360;
+          image.addEventListener('error',()=>imageLink.remove(),{once:true});imageLink.append(image);card.append(imageLink);
+        }}catch{}
+      }
+      card.append(node('p',r.kind,'eyebrow'));
       const heading=node('h3',''),link=node('a',r.title);link.href=url.href;link.target='_blank';link.rel='noopener noreferrer';heading.append(link);card.append(heading);
       card.append(node('p',r.publisher,'resource-publisher'));
       if(r.summary)card.append(node('p',r.summary,'resource-summary'));
@@ -46,15 +57,20 @@
   Object.values(controls).forEach(input=>input.addEventListener(input.tagName==='INPUT'?'input':'change',()=>{limit=12;render();}));
   $('#library-search').addEventListener('reset',()=>setTimeout(()=>{limit=12;render();},0));
   $('#resource-more').addEventListener('click',()=>{limit+=12;render();});
-  document.querySelectorAll('.method-filter').forEach(button=>button.addEventListener('click',()=>{
-    controls.method.value=button.dataset.method;controls.q.value='';controls.kind.value='';controls.origin.value='';limit=12;render();
+  document.querySelectorAll('.method-filter').forEach(button=>button.addEventListener('click',event=>{
+    event.preventDefault();
+    controls.method.value=button.dataset.method;controls.q.value='';controls.kind.value='';limit=12;render();
+    history.replaceState(null,'',location.pathname+location.search+'#resources');
     $('#resource-heading').scrollIntoView({behavior:document.documentElement.classList.contains('motion-paused')?'instant':'smooth',block:'start'});
-    controls.method.focus({preventScroll:true});
+    $('#resource-heading').focus({preventScroll:true});
   }));
+  $('#library-all').addEventListener('click',()=>{controls.method.value='';controls.q.value='';controls.kind.value='';limit=12;render();});
+  if(controls.q.value||controls.kind.value||controls.sort.value!=='newest')$('.library-discovery').open=true;
   async function load() {
     try {
       const response=await fetch('/data/library.json',{cache:'no-cache',signal:AbortSignal.timeout(12000)});if(!response.ok)throw Error();
       const data=await response.json();if(!Array.isArray(data.resources))throw Error();
+      techniques=data.techniques||[];
       records=data.resources.filter(r=>Array.isArray(r.elements)&&r.elements.includes(element)&&Array.isArray(r.tags)&&typeof r.title==='string');
       render();
       const sources=$('#library-sources');

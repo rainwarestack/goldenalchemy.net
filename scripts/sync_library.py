@@ -6,6 +6,7 @@ import re
 import unicodedata
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
+from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit, urlunsplit
 from urllib.request import Request, urlopen
@@ -24,6 +25,31 @@ def safe_url(raw, host):
     if parsed.scheme != 'https' or parsed.hostname not in {host, host.removeprefix('www.')} or parsed.username or parsed.password:
         return None
     return urlunsplit((parsed.scheme, parsed.netloc, parsed.path, parsed.query, ''))
+
+class FeedImages(HTMLParser):
+    def __init__(self):
+        super().__init__(); self.urls = []
+
+    def handle_starttag(self, tag, attrs):
+        if tag == 'img':
+            values = dict(attrs)
+            self.urls.append(values.get('src') or values.get('data-src') or '')
+
+def thumbnail(entry, source):
+    candidates = []
+    for child in entry.iter():
+        if child.tag in ('{http://search.yahoo.com/mrss/}thumbnail', '{http://search.yahoo.com/mrss/}content', 'enclosure'):
+            candidates.append(child.get('url', ''))
+    parser = FeedImages()
+    for field in ('description', '{http://purl.org/rss/1.0/modules/content/}encoded'):
+        parser.feed(entry.findtext(field) or '')
+    candidates.extend(parser.urls)
+    allowed = {source['host'], source['host'].removeprefix('www.'), *source.get('imageHosts', [])}
+    for candidate in candidates:
+        parsed = urlsplit(html.unescape(candidate))
+        if parsed.scheme == 'https' and parsed.hostname in allowed and not parsed.username and not parsed.password and not parsed.path.lower().endswith('.svg'):
+            return urlunsplit((parsed.scheme, parsed.netloc, parsed.path, parsed.query, ''))
+    return None
 
 def parse_feed(data, source, techniques, now):
     if len(data) > 2_000_000:
@@ -53,7 +79,7 @@ def parse_feed(data, source, techniques, now):
             published = date.astimezone(timezone.utc).isoformat()
         except (ValueError, TypeError, OverflowError):
             pass
-        items.append(dict(id=hashlib.sha256(url.encode()).hexdigest()[:20], title=title, url=url, publisher=source['name'], elements=sorted(elements), tags=sorted(tags), kind='Article', origin='RSS', publishedAt=published, addedAt=now, summary=''))
+        items.append(dict(id=hashlib.sha256(url.encode()).hexdigest()[:20], title=title, url=url, publisher=source['name'], elements=sorted(elements), tags=sorted(tags), kind='Article', origin='RSS', publishedAt=published, addedAt=now, summary='', thumbnail=thumbnail(entry, source)))
     if not items:
         raise ValueError('No valid feed items')
     return items

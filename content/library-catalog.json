@@ -1319,7 +1319,10 @@
       "name": "Barbecue Bible",
       "url": "https://barbecuebible.com/feed/",
       "host": "barbecuebible.com",
-      "defaultElement": "fire"
+      "defaultElement": "fire",
+      "imageHosts": [
+        "d21klxpge3tttg.cloudfront.net"
+      ]
     },
     {
       "id": "baking",
