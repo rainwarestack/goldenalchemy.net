@@ -37,7 +37,12 @@ def footer():
 
 def home():
     from home_page import render_home
-    return render_home(image, eyebrow, IG, TT)
+    photos = {'hero': ('home-header.jpg', 1199, 672), 'guild': ('home-guild.jpg', 735, 490), 'oracle': ('home-news.png', 1920, 1080), 'bazaar': ('home-marketplace.png', 1672, 941)}
+    def home_image(key, alt, eager=False):
+        filename, width, height = photos[key]
+        loading = 'fetchpriority="high"' if eager else 'loading="lazy"'
+        return f'<img src="/assets/images/{filename}" alt="{escape(alt)}" {loading} width="{width}" height="{height}">'
+    return render_home(home_image, eyebrow, IG, TT)
 
 def forum():
     return intro('THE COMMUNITY / COMING TO THE TABLE', 'Chef Rain’s Guild.', 'Every kind of chef. Every kind of kitchen. A future gathering place to share your work and learn from one another.') + f'''<section class="wrap guild-layout"><div class="guild-main"><div class="toolbar"><h2>The shared table</h2><span class="status">COMMUNITY COMING SOON</span></div><div class="guild-photo">{image('guild', 'Food preparation in a shared kitchen')}<span class="image-caption">A space for the craft. A place for the people.</span></div>{notice('The table is being set.', 'Dish uploads, likes, comments, and profiles will open when community accounts are ready. No posts or reactions are being collected yet.')}<div class="community-features"><div><span>01</span><h3>Share your craft</h3><p>Photos, films, and the stories behind a finished dish.</p></div><div><span>02</span><h3>Find your people</h3><p>Profiles with your specialty, biography, gallery, and social links.</p></div></div></div><aside class="guild-sidebar"><div class="panel copper-panel">{eyebrow('YOUR PLACE IN THE GUILD')}<h2>Chef comes first.</h2><p>Every public handle will begin with <strong>chef</strong>. From home cooks to seasoned professionals, everyone has a place.</p><div class="handle-example">@chefRain <span>EXAMPLE HANDLE</span></div><button class="button" data-community>Account availability →</button></div><div class="panel"><span class="status">PLANNED FEATURE</span><h3>Kitchen conversation</h3><p>Global chat for signed-in members. Chat and messaging are not active yet.</p></div><p class="small muted">Accounts, storage, moderation, reporting, and blocking will be configured before the community opens.</p></aside></section>'''
