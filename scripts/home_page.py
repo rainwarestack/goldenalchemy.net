@@ -19,7 +19,7 @@ def render_home(image, eyebrow, instagram, tiktok):
          'forum', 'Enter the guild', 'Memberships & community tools coming soon', 'Restaurant kitchen pass with stacked plates under warm pendant lights'),
         ('oracle', '04 / THE DISCOVERY', 'Global News Feed',
          'Stay in the loop with official food-recall reports and local forecasts. Recipe discovery is coming next, bringing fresh inspiration to the ingredients already in your pantry.',
-         'theoracle', 'Browse news and recipes', 'FDA reports & New York forecasts available', 'Golden globe illustration with culinary symbols on a black background'),
+         'theoracle', 'Browse news and recipes', 'FDA reports & New York forecasts available', 'Coffee, sliced artisan bread, and butter on a marble breakfast table'),
         ('bazaar', '05 / THE MARKET', 'Chef Rain’s Marketplace',
          'Explore the collection taking shape: online cooking classes, cookbooks, signature seasonings, and culinary goods. Meal preparation and catering for New York City residents are planned, with availability to be announced.',
          'marketplace', 'Explore the marketplace', 'Products & services coming soon', 'Candlelit table filled with dishes for a shared feast'),
@@ -33,7 +33,7 @@ def render_home(image, eyebrow, instagram, tiktok):
     )
     return f'''
     <section class="hero revised-hero">
-      <div class="hero-image">{image('hero','Bowls of curry, vegetables, herbs, and spices on a rustic brown surface',True)}</div>
+      <div class="hero-image">{image('hero','Golden globe illustration with culinary symbols on a black background',True)}</div>
       <div class="hero-shade"></div>
       <div class="wrap hero-content">
         {eyebrow('CHEF RAIN’S KITCHEN · GOLDEN ALCHEMY')}

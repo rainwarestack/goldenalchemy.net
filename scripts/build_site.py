@@ -37,7 +37,7 @@ def footer():
 
 def home():
     from home_page import render_home
-    photos = {'hero': ('home-header.jpg', 1199, 672), 'guild': ('home-guild.jpg', 735, 490), 'oracle': ('home-news.png', 1920, 1080), 'bazaar': ('home-marketplace.png', 1672, 941)}
+    photos = {'hero': ('home-news.png', 1920, 1080), 'guild': ('home-guild.jpg', 735, 490), 'oracle': ('home-news-breakfast.png', 1672, 941), 'bazaar': ('home-marketplace.png', 1672, 941)}
     def home_image(key, alt, eager=False):
         filename, width, height = photos[key]
         loading = 'fetchpriority="high"' if eager else 'loading="lazy"'
