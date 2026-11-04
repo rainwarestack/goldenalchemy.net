@@ -57,10 +57,4 @@ def render_home(image, eyebrow, instagram, tiktok):
       <p class="realm-phase-note">Explore what’s available now and what’s coming next below.</p></div>
       <div class="realm-grid">{cards}</div>
     </div></section>
-    <section class="social-section"><div class="wrap social-inner"><div>
-      {eyebrow('THANK YOU FOR VISITING THIS SITE')}<h2>Follow Chef Rain’s<br>next creation.</h2>
-      <p>Explore Chef Rain’s work on TikTok and Instagram.</p>
-    </div><div class="social-links">
-      <a href="{instagram}" target="_blank" rel="noopener noreferrer"><span>INSTAGRAM<small>@goldenalchemy.na</small></span><span aria-hidden="true">↗</span></a>
-      <a href="{tiktok}" target="_blank" rel="noopener noreferrer"><span>TIKTOK — EXTENDED VIDEOS<small>@goldenalchemy.net</small></span><span aria-hidden="true">↗</span></a>
-    </div></div></section>'''
+    '''
