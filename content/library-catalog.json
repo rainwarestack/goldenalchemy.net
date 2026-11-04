@@ -1,0 +1,1332 @@
+{
+  "techniques": [
+    {
+      "id": "fire-grilling",
+      "element": "fire",
+      "name": "Grilling",
+      "family": "Open flame",
+      "tools": [
+        "grill",
+        "tongs",
+        "thermometer"
+      ],
+      "summary": "Cook over a grill grate using direct or indirect heat."
+    },
+    {
+      "id": "fire-flame-roasting",
+      "element": "fire",
+      "name": "Flame roasting",
+      "family": "Open flame",
+      "tools": [
+        "grill",
+        "tongs",
+        "thermometer"
+      ],
+      "summary": "Roast food near a live flame, turning it for even exposure."
+    },
+    {
+      "id": "fire-torching",
+      "element": "fire",
+      "name": "Torching",
+      "family": "Finishing",
+      "tools": [
+        "culinary torch"
+      ],
+      "summary": "Use a culinary torch to brown a small area with precision."
+    },
+    {
+      "id": "fire-flamb-ing",
+      "element": "fire",
+      "name": "Flambéing",
+      "family": "Finishing",
+      "tools": [
+        "pan"
+      ],
+      "summary": "Ignite alcohol in a prepared dish as a finishing technique."
+    },
+    {
+      "id": "fire-ember-roasting",
+      "element": "fire",
+      "name": "Ember roasting",
+      "family": "Embers & wood",
+      "tools": [
+        "hearth",
+        "tongs"
+      ],
+      "summary": "Cook beside or within hot embers rather than tall flames."
+    },
+    {
+      "id": "fire-charring",
+      "element": "fire",
+      "name": "Charring",
+      "family": "Finishing",
+      "tools": [
+        "pan",
+        "torch"
+      ],
+      "summary": "Darken the surface briefly to develop a roasted edge."
+    },
+    {
+      "id": "fire-broiling",
+      "element": "fire",
+      "name": "Broiling",
+      "family": "Finishing",
+      "tools": [
+        "oven"
+      ],
+      "summary": "Cook beneath a strong overhead heat source."
+    },
+    {
+      "id": "fire-spit-roasting",
+      "element": "fire",
+      "name": "Spit roasting",
+      "family": "Open flame",
+      "tools": [
+        "grill",
+        "tongs",
+        "thermometer"
+      ],
+      "summary": "Rotate food on a spit for even roasting."
+    },
+    {
+      "id": "fire-low-and-slow-barbecue",
+      "element": "fire",
+      "name": "Low and slow barbecue",
+      "family": "Slow cooking",
+      "tools": [
+        "smoker",
+        "thermometer"
+      ],
+      "summary": "Cook slowly with controlled indirect heat, often with smoke."
+    },
+    {
+      "id": "fire-fireside-roasting",
+      "element": "fire",
+      "name": "Fireside roasting",
+      "family": "Open flame",
+      "tools": [
+        "grill",
+        "tongs",
+        "thermometer"
+      ],
+      "summary": "Roast near a hearth using distance to manage heat."
+    },
+    {
+      "id": "fire-hot-smoking",
+      "element": "fire",
+      "name": "Hot smoking",
+      "family": "Smoke",
+      "tools": [
+        "smoker",
+        "thermometer"
+      ],
+      "summary": "Use heat and smoke together to cook and flavor food."
+    },
+    {
+      "id": "fire-cold-smoking",
+      "element": "fire",
+      "name": "Cold smoking",
+      "family": "Smoke",
+      "tools": [
+        "smoker",
+        "thermometer"
+      ],
+      "summary": "Apply smoke without cooking the food; use a tested preservation process."
+    },
+    {
+      "id": "fire-smoke-roasting",
+      "element": "fire",
+      "name": "Smoke roasting",
+      "family": "Smoke",
+      "tools": [
+        "smoker",
+        "thermometer"
+      ],
+      "summary": "Roast with indirect heat while exposing food to smoke."
+    },
+    {
+      "id": "fire-smoke-infusion",
+      "element": "fire",
+      "name": "Smoke infusion",
+      "family": "Smoke",
+      "tools": [
+        "smoking gun"
+      ],
+      "summary": "Add smoke aroma to ingredients or finished dishes."
+    },
+    {
+      "id": "fire-tandoor-cooking",
+      "element": "fire",
+      "name": "Tandoor cooking",
+      "family": "Embers & wood",
+      "tools": [
+        "tandoor"
+      ],
+      "summary": "Cook in a high-heat cylindrical tandoor oven."
+    },
+    {
+      "id": "fire-wood-fired-baking",
+      "element": "fire",
+      "name": "Wood-fired baking",
+      "family": "Embers & wood",
+      "tools": [
+        "wood-fired oven"
+      ],
+      "summary": "Bake using heat from a wood-fired oven or hearth."
+    },
+    {
+      "id": "fire-pan-frying",
+      "element": "fire",
+      "name": "Pan frying",
+      "family": "Surface & oil",
+      "tools": [
+        "pan",
+        "thermometer"
+      ],
+      "summary": "Cook in a pan with a shallow layer of fat."
+    },
+    {
+      "id": "fire-deep-frying",
+      "element": "fire",
+      "name": "Deep frying",
+      "family": "Surface & oil",
+      "tools": [
+        "deep pot",
+        "thermometer"
+      ],
+      "summary": "Immerse food in hot oil for an evenly fried surface."
+    },
+    {
+      "id": "fire-griddling",
+      "element": "fire",
+      "name": "Griddling",
+      "family": "Surface & oil",
+      "tools": [
+        "griddle"
+      ],
+      "summary": "Cook against a broad, flat heated surface."
+    },
+    {
+      "id": "fire-pan-roasting",
+      "element": "fire",
+      "name": "Pan roasting",
+      "family": "Surface & oil",
+      "tools": [
+        "pan",
+        "oven"
+      ],
+      "summary": "Combine stovetop browning with controlled roasting."
+    },
+    {
+      "id": "fire-toasting",
+      "element": "fire",
+      "name": "Toasting",
+      "family": "Finishing",
+      "tools": [
+        "oven",
+        "toaster"
+      ],
+      "summary": "Brown and dry a surface with short exposure to heat."
+    },
+    {
+      "id": "fire-blackening",
+      "element": "fire",
+      "name": "Blackening",
+      "family": "Finishing",
+      "tools": [
+        "pan"
+      ],
+      "summary": "Sear a seasoned surface to form a deeply browned crust."
+    },
+    {
+      "id": "water-boiling",
+      "element": "water",
+      "name": "Boiling",
+      "family": "Liquid cooking",
+      "tools": [
+        "pot",
+        "thermometer"
+      ],
+      "summary": "Cook food in actively bubbling liquid."
+    },
+    {
+      "id": "water-simmering",
+      "element": "water",
+      "name": "Simmering",
+      "family": "Liquid cooking",
+      "tools": [
+        "pot",
+        "thermometer"
+      ],
+      "summary": "Cook in liquid at a gentle bubble."
+    },
+    {
+      "id": "water-poaching",
+      "element": "water",
+      "name": "Poaching",
+      "family": "Liquid cooking",
+      "tools": [
+        "pot",
+        "thermometer"
+      ],
+      "summary": "Cook delicate food in gently heated liquid."
+    },
+    {
+      "id": "water-blanching",
+      "element": "water",
+      "name": "Blanching",
+      "family": "Liquid cooking",
+      "tools": [
+        "pot",
+        "thermometer"
+      ],
+      "summary": "Briefly cook food in boiling water or steam."
+    },
+    {
+      "id": "water-coddling",
+      "element": "water",
+      "name": "Coddling",
+      "family": "Liquid cooking",
+      "tools": [
+        "pot",
+        "thermometer"
+      ],
+      "summary": "Cook gently below a simmer, often for eggs."
+    },
+    {
+      "id": "water-bain-marie",
+      "element": "water",
+      "name": "Bain-marie",
+      "family": "Steam",
+      "tools": [
+        "steamer",
+        "pot"
+      ],
+      "summary": "Use a surrounding water bath to moderate heat."
+    },
+    {
+      "id": "water-sous-vide",
+      "element": "water",
+      "name": "Sous vide",
+      "family": "Steam",
+      "tools": [
+        "steamer",
+        "pot"
+      ],
+      "summary": "Cook sealed food in a temperature-controlled water bath."
+    },
+    {
+      "id": "water-blanch-and-shock",
+      "element": "water",
+      "name": "Blanch and shock",
+      "family": "Liquid cooking",
+      "tools": [
+        "pot",
+        "thermometer"
+      ],
+      "summary": "Blanch, then cool rapidly to stop cooking."
+    },
+    {
+      "id": "water-stewing",
+      "element": "water",
+      "name": "Stewing",
+      "family": "Stocks & slow cooking",
+      "tools": [
+        "pot",
+        "strainer"
+      ],
+      "summary": "Cook small pieces slowly in a flavorful liquid."
+    },
+    {
+      "id": "water-braising",
+      "element": "water",
+      "name": "Braising",
+      "family": "Stocks & slow cooking",
+      "tools": [
+        "pot",
+        "strainer"
+      ],
+      "summary": "Combine initial browning with slow covered cooking in liquid."
+    },
+    {
+      "id": "water-stock-making",
+      "element": "water",
+      "name": "Stock making",
+      "family": "Stocks & slow cooking",
+      "tools": [
+        "pot",
+        "strainer"
+      ],
+      "summary": "Extract flavor from ingredients into a cooking liquid."
+    },
+    {
+      "id": "water-broth-making",
+      "element": "water",
+      "name": "Broth making",
+      "family": "Stocks & slow cooking",
+      "tools": [
+        "pot",
+        "strainer"
+      ],
+      "summary": "Build a cooking liquid from meat, vegetables, or both."
+    },
+    {
+      "id": "water-decoction",
+      "element": "water",
+      "name": "Decoction",
+      "family": "Stocks & slow cooking",
+      "tools": [
+        "pot",
+        "strainer"
+      ],
+      "summary": "Extract flavor by simmering ingredients in water."
+    },
+    {
+      "id": "water-liquid-reduction",
+      "element": "water",
+      "name": "Liquid reduction",
+      "family": "Stocks & slow cooking",
+      "tools": [
+        "pot",
+        "strainer"
+      ],
+      "summary": "Concentrate a liquid through evaporation."
+    },
+    {
+      "id": "water-congee-cooking",
+      "element": "water",
+      "name": "Congee cooking",
+      "family": "Stocks & slow cooking",
+      "tools": [
+        "pot",
+        "strainer"
+      ],
+      "summary": "Cook rice in ample water until it becomes a porridge."
+    },
+    {
+      "id": "water-steaming",
+      "element": "water",
+      "name": "Steaming",
+      "family": "Steam",
+      "tools": [
+        "steamer",
+        "pot"
+      ],
+      "summary": "Cook food with vapor above heated water."
+    },
+    {
+      "id": "water-pressure-steaming",
+      "element": "water",
+      "name": "Pressure steaming",
+      "family": "Steam",
+      "tools": [
+        "steamer",
+        "pot"
+      ],
+      "summary": "Use a pressure-rated vessel to cook with steam."
+    },
+    {
+      "id": "water-soaking",
+      "element": "water",
+      "name": "Soaking",
+      "family": "Preservation & soaking",
+      "tools": [
+        "food-safe container",
+        "scale"
+      ],
+      "summary": "Hydrate ingredients in liquid before further preparation."
+    },
+    {
+      "id": "water-brining",
+      "element": "water",
+      "name": "Brining",
+      "family": "Preservation & soaking",
+      "tools": [
+        "food-safe container",
+        "scale"
+      ],
+      "summary": "Soak food in a prepared salt solution."
+    },
+    {
+      "id": "water-curing",
+      "element": "water",
+      "name": "Curing",
+      "family": "Preservation & soaking",
+      "tools": [
+        "food-safe container",
+        "scale"
+      ],
+      "summary": "Use controlled salt-based processes to preserve or transform food."
+    },
+    {
+      "id": "water-pickling",
+      "element": "water",
+      "name": "Pickling",
+      "family": "Preservation & soaking",
+      "tools": [
+        "food-safe container",
+        "scale"
+      ],
+      "summary": "Preserve or flavor food through tested acidic or fermented preparations."
+    },
+    {
+      "id": "earth-earth-oven",
+      "element": "earth",
+      "name": "Earth oven",
+      "family": "Earth ovens & pits",
+      "tools": [
+        "earth oven"
+      ],
+      "summary": "Cook using heat held in an earthen oven."
+    },
+    {
+      "id": "earth-pachamanca",
+      "element": "earth",
+      "name": "Pachamanca",
+      "family": "Earth ovens & pits",
+      "tools": [
+        "earth oven"
+      ],
+      "summary": "Explore an Andean earth-oven tradition using heated stones."
+    },
+    {
+      "id": "earth-m-ori-h-ng",
+      "element": "earth",
+      "name": "Māori hāngī",
+      "family": "Earth ovens & pits",
+      "tools": [
+        "earth oven"
+      ],
+      "summary": "Explore the Māori earth-oven tradition of cooking with heated stones and steam."
+    },
+    {
+      "id": "earth-imu-cooking",
+      "element": "earth",
+      "name": "Imu cooking",
+      "family": "Earth ovens & pits",
+      "tools": [
+        "earth oven"
+      ],
+      "summary": "Explore a Hawaiian underground-oven cooking tradition."
+    },
+    {
+      "id": "earth-barbacoa-de-pozo",
+      "element": "earth",
+      "name": "Barbacoa de pozo",
+      "family": "Earth ovens & pits",
+      "tools": [
+        "earth oven"
+      ],
+      "summary": "Explore a pit-cooking tradition associated with Mexican barbacoa."
+    },
+    {
+      "id": "earth-lovo",
+      "element": "earth",
+      "name": "Lovo",
+      "family": "Earth ovens & pits",
+      "tools": [
+        "earth oven"
+      ],
+      "summary": "Explore a Fijian earth-oven cooking tradition."
+    },
+    {
+      "id": "earth-umu",
+      "element": "earth",
+      "name": "Umu",
+      "family": "Earth ovens & pits",
+      "tools": [
+        "earth oven"
+      ],
+      "summary": "Explore earth-oven traditions found across Polynesia."
+    },
+    {
+      "id": "earth-mumu",
+      "element": "earth",
+      "name": "Mumu",
+      "family": "Earth ovens & pits",
+      "tools": [
+        "earth oven"
+      ],
+      "summary": "Explore an earth-oven cooking tradition of Papua New Guinea."
+    },
+    {
+      "id": "earth-curanto-en-hoyo",
+      "element": "earth",
+      "name": "Curanto en hoyo",
+      "family": "Earth ovens & pits",
+      "tools": [
+        "earth oven"
+      ],
+      "summary": "Explore a Chilean pit-cooking tradition using heated stones."
+    },
+    {
+      "id": "earth-pit-clambake",
+      "element": "earth",
+      "name": "Pit clambake",
+      "family": "Earth ovens & pits",
+      "tools": [
+        "earth oven"
+      ],
+      "summary": "Cook a layered coastal feast using heated stones and steam."
+    },
+    {
+      "id": "earth-pit-baking",
+      "element": "earth",
+      "name": "Pit baking",
+      "family": "Earth ovens & pits",
+      "tools": [
+        "earth oven"
+      ],
+      "summary": "Bake using heat retained within a prepared pit."
+    },
+    {
+      "id": "earth-hot-stone",
+      "element": "earth",
+      "name": "Hot stone",
+      "family": "Stone & grinding",
+      "tools": [
+        "stone",
+        "mortar and pestle"
+      ],
+      "summary": "Transfer heat from a heated stone to food."
+    },
+    {
+      "id": "earth-stone-griddle",
+      "element": "earth",
+      "name": "Stone griddle",
+      "family": "Stone & grinding",
+      "tools": [
+        "stone",
+        "mortar and pestle"
+      ],
+      "summary": "Cook food on a flat heated stone surface."
+    },
+    {
+      "id": "earth-stone-boiling",
+      "element": "earth",
+      "name": "Stone boiling",
+      "family": "Stone & grinding",
+      "tools": [
+        "stone",
+        "mortar and pestle"
+      ],
+      "summary": "Heat liquid using suitable hot stones in a traditional cooking vessel."
+    },
+    {
+      "id": "earth-salt-block-cooking",
+      "element": "earth",
+      "name": "Salt block cooking",
+      "family": "Salt & drying",
+      "tools": [
+        "salt block",
+        "scale"
+      ],
+      "summary": "Cook or serve food on a purpose-made salt block."
+    },
+    {
+      "id": "earth-stone-bed",
+      "element": "earth",
+      "name": "Stone bed",
+      "family": "Stone & grinding",
+      "tools": [
+        "stone",
+        "mortar and pestle"
+      ],
+      "summary": "Arrange food over a bed of suitable heated stones."
+    },
+    {
+      "id": "earth-stone-covered",
+      "element": "earth",
+      "name": "Stone covered",
+      "family": "Stone & grinding",
+      "tools": [
+        "stone",
+        "mortar and pestle"
+      ],
+      "summary": "Cover or surround food with suitable heated stones."
+    },
+    {
+      "id": "earth-soapstone",
+      "element": "earth",
+      "name": "Soapstone",
+      "family": "Stone & grinding",
+      "tools": [
+        "stone",
+        "mortar and pestle"
+      ],
+      "summary": "Explore cookware made from heat-retaining soapstone."
+    },
+    {
+      "id": "earth-lava-stone",
+      "element": "earth",
+      "name": "Lava stone",
+      "family": "Stone & grinding",
+      "tools": [
+        "stone",
+        "mortar and pestle"
+      ],
+      "summary": "Explore cooking equipment using volcanic stone."
+    },
+    {
+      "id": "earth-tagine-cooking",
+      "element": "earth",
+      "name": "Tagine cooking",
+      "family": "Clay & ceramics",
+      "tools": [
+        "clay pot"
+      ],
+      "summary": "Cook slowly in a covered tagine vessel."
+    },
+    {
+      "id": "earth-clay-pot-roasting",
+      "element": "earth",
+      "name": "Clay pot roasting",
+      "family": "Clay & ceramics",
+      "tools": [
+        "clay pot"
+      ],
+      "summary": "Roast in a suitable covered clay vessel."
+    },
+    {
+      "id": "earth-handi-cooking",
+      "element": "earth",
+      "name": "Handi cooking",
+      "family": "Clay & ceramics",
+      "tools": [
+        "clay pot"
+      ],
+      "summary": "Cook in a handi, a rounded cooking pot associated with South Asian cuisines."
+    },
+    {
+      "id": "earth-ceramic",
+      "element": "earth",
+      "name": "Ceramic",
+      "family": "Clay & ceramics",
+      "tools": [
+        "clay pot"
+      ],
+      "summary": "Explore cooking in purpose-made ceramic vessels."
+    },
+    {
+      "id": "earth-terracotta",
+      "element": "earth",
+      "name": "Terracotta",
+      "family": "Clay & ceramics",
+      "tools": [
+        "clay pot"
+      ],
+      "summary": "Explore cooking in purpose-made terracotta vessels."
+    },
+    {
+      "id": "earth-dry-salting",
+      "element": "earth",
+      "name": "Dry salting",
+      "family": "Salt & drying",
+      "tools": [
+        "salt block",
+        "scale"
+      ],
+      "summary": "Apply measured dry salt as part of a tested preparation."
+    },
+    {
+      "id": "earth-salt-packing",
+      "element": "earth",
+      "name": "Salt packing",
+      "family": "Salt & drying",
+      "tools": [
+        "salt block",
+        "scale"
+      ],
+      "summary": "Surround food with salt for a particular cooking or curing process."
+    },
+    {
+      "id": "earth-salt-dehydration",
+      "element": "earth",
+      "name": "Salt dehydration",
+      "family": "Salt & drying",
+      "tools": [
+        "salt block",
+        "scale"
+      ],
+      "summary": "Draw moisture from food using controlled salt-based preparation."
+    },
+    {
+      "id": "earth-salt-bed",
+      "element": "earth",
+      "name": "Salt bed",
+      "family": "Salt & drying",
+      "tools": [
+        "salt block",
+        "scale"
+      ],
+      "summary": "Cook over or within a prepared bed of salt."
+    },
+    {
+      "id": "earth-hot-sand-cooking",
+      "element": "earth",
+      "name": "Hot sand cooking",
+      "family": "Sand & ash",
+      "tools": [
+        "hearth",
+        "tongs"
+      ],
+      "summary": "Use heated sand as a heat-transfer medium."
+    },
+    {
+      "id": "earth-sand-roasting",
+      "element": "earth",
+      "name": "Sand roasting",
+      "family": "Sand & ash",
+      "tools": [
+        "hearth",
+        "tongs"
+      ],
+      "summary": "Roast ingredients using controlled contact with heated sand."
+    },
+    {
+      "id": "earth-ash-baking",
+      "element": "earth",
+      "name": "Ash baking",
+      "family": "Sand & ash",
+      "tools": [
+        "hearth",
+        "tongs"
+      ],
+      "summary": "Bake wrapped or protected food using retained heat in ash."
+    },
+    {
+      "id": "earth-stone-grinding",
+      "element": "earth",
+      "name": "Stone grinding",
+      "family": "Stone & grinding",
+      "tools": [
+        "stone",
+        "mortar and pestle"
+      ],
+      "summary": "Grind ingredients between suitable stone surfaces."
+    },
+    {
+      "id": "earth-mortar-and-pestle",
+      "element": "earth",
+      "name": "Mortar and pestle",
+      "family": "Stone & grinding",
+      "tools": [
+        "stone",
+        "mortar and pestle"
+      ],
+      "summary": "Crush, grind, or blend ingredients with a mortar and pestle."
+    },
+    {
+      "id": "air-air-frying",
+      "element": "air",
+      "name": "Air frying",
+      "family": "Circulating heat",
+      "tools": [
+        "oven",
+        "rack"
+      ],
+      "summary": "Cook with rapid circulation of heated air."
+    },
+    {
+      "id": "air-convection-roasting",
+      "element": "air",
+      "name": "Convection roasting",
+      "family": "Circulating heat",
+      "tools": [
+        "oven",
+        "rack"
+      ],
+      "summary": "Roast with circulating hot air."
+    },
+    {
+      "id": "air-convection-baking",
+      "element": "air",
+      "name": "Convection baking",
+      "family": "Circulating heat",
+      "tools": [
+        "oven",
+        "rack"
+      ],
+      "summary": "Bake with circulating hot air."
+    },
+    {
+      "id": "air-air-drying",
+      "element": "air",
+      "name": "Air drying",
+      "family": "Drying",
+      "tools": [
+        "dehydrator"
+      ],
+      "summary": "Remove moisture through controlled air exposure."
+    },
+    {
+      "id": "air-forced-air-dehydration",
+      "element": "air",
+      "name": "Forced-air dehydration",
+      "family": "Drying",
+      "tools": [
+        "dehydrator"
+      ],
+      "summary": "Use moving air to remove moisture from food."
+    },
+    {
+      "id": "air-sun-drying",
+      "element": "air",
+      "name": "Sun drying",
+      "family": "Drying",
+      "tools": [
+        "dehydrator"
+      ],
+      "summary": "Dry suitable foods using solar heat and air."
+    },
+    {
+      "id": "air-wind-drying",
+      "element": "air",
+      "name": "Wind drying",
+      "family": "Drying",
+      "tools": [
+        "dehydrator"
+      ],
+      "summary": "Dry suitable foods using controlled exposure to moving air."
+    },
+    {
+      "id": "air-whipping",
+      "element": "air",
+      "name": "Whipping",
+      "family": "Aeration",
+      "tools": [
+        "whisk",
+        "mixer"
+      ],
+      "summary": "Incorporate air into a mixture through repeated agitation."
+    },
+    {
+      "id": "air-creaming",
+      "element": "air",
+      "name": "Creaming",
+      "family": "Aeration",
+      "tools": [
+        "whisk",
+        "mixer"
+      ],
+      "summary": "Beat fat and sugar to incorporate air."
+    },
+    {
+      "id": "air-foaming",
+      "element": "air",
+      "name": "Foaming",
+      "family": "Aeration",
+      "tools": [
+        "whisk",
+        "mixer"
+      ],
+      "summary": "Create and stabilize small bubbles in a mixture."
+    },
+    {
+      "id": "air-whisking",
+      "element": "air",
+      "name": "Whisking",
+      "family": "Aeration",
+      "tools": [
+        "whisk",
+        "mixer"
+      ],
+      "summary": "Blend or aerate using a whisk."
+    },
+    {
+      "id": "air-beating",
+      "element": "air",
+      "name": "Beating",
+      "family": "Aeration",
+      "tools": [
+        "whisk",
+        "mixer"
+      ],
+      "summary": "Mix vigorously to combine ingredients or incorporate air."
+    },
+    {
+      "id": "air-folding",
+      "element": "air",
+      "name": "Folding",
+      "family": "Aeration",
+      "tools": [
+        "whisk",
+        "mixer"
+      ],
+      "summary": "Combine mixtures gently while retaining air."
+    },
+    {
+      "id": "air-sifting",
+      "element": "air",
+      "name": "Sifting",
+      "family": "Aeration",
+      "tools": [
+        "whisk",
+        "mixer"
+      ],
+      "summary": "Pass dry ingredients through a sieve to remove lumps."
+    },
+    {
+      "id": "air-frothing",
+      "element": "air",
+      "name": "Frothing",
+      "family": "Aeration",
+      "tools": [
+        "whisk",
+        "mixer"
+      ],
+      "summary": "Build fine bubbles in a liquid."
+    },
+    {
+      "id": "air-yeast-leavening",
+      "element": "air",
+      "name": "Yeast leavening",
+      "family": "Leavening",
+      "tools": [
+        "scale",
+        "mixing bowl"
+      ],
+      "summary": "Use yeast activity to produce gas within dough."
+    },
+    {
+      "id": "air-sourdough-fermentation",
+      "element": "air",
+      "name": "Sourdough fermentation",
+      "family": "Leavening",
+      "tools": [
+        "scale",
+        "mixing bowl"
+      ],
+      "summary": "Use a maintained sourdough culture to ferment dough."
+    },
+    {
+      "id": "air-chemical-leavening",
+      "element": "air",
+      "name": "Chemical leavening",
+      "family": "Leavening",
+      "tools": [
+        "scale",
+        "mixing bowl"
+      ],
+      "summary": "Use chemical leaveners to generate gas in a mixture."
+    },
+    {
+      "id": "air-steam-leavening",
+      "element": "air",
+      "name": "Steam leavening",
+      "family": "Leavening",
+      "tools": [
+        "scale",
+        "mixing bowl"
+      ],
+      "summary": "Use expanding steam to help a mixture rise."
+    },
+    {
+      "id": "air-carbonation",
+      "element": "air",
+      "name": "Carbonation",
+      "family": "Aeration",
+      "tools": [
+        "whisk",
+        "mixer"
+      ],
+      "summary": "Dissolve carbon dioxide in a liquid."
+    },
+    {
+      "id": "air-beverage-aeration",
+      "element": "air",
+      "name": "Beverage aeration",
+      "family": "Aeration",
+      "tools": [
+        "whisk",
+        "mixer"
+      ],
+      "summary": "Expose a beverage to air to change its sensory qualities."
+    },
+    {
+      "id": "air-circulation",
+      "element": "air",
+      "name": "Circulation",
+      "family": "Circulating heat",
+      "tools": [
+        "oven",
+        "rack"
+      ],
+      "summary": "Move air around food to distribute heat or remove moisture."
+    },
+    {
+      "id": "air-dehydration",
+      "element": "air",
+      "name": "Dehydration",
+      "family": "Drying",
+      "tools": [
+        "dehydrator"
+      ],
+      "summary": "Remove moisture under controlled conditions."
+    },
+    {
+      "id": "air-aeration",
+      "element": "air",
+      "name": "Aeration",
+      "family": "Aeration",
+      "tools": [
+        "whisk",
+        "mixer"
+      ],
+      "summary": "Introduce air into food or a mixture."
+    },
+    {
+      "id": "air-expansion",
+      "element": "air",
+      "name": "Expansion",
+      "family": "Leavening",
+      "tools": [
+        "scale",
+        "mixing bowl"
+      ],
+      "summary": "Explore how gases expand as mixtures warm or rise."
+    }
+  ],
+  "resources": [
+    {
+      "id": "grill-setup",
+      "title": "How to set up a grill or smoker",
+      "url": "https://amazingribs.com/technique-and-science/grill-and-smoker-setup/",
+      "publisher": "AmazingRibs",
+      "elements": [
+        "fire"
+      ],
+      "tags": [
+        "grilling",
+        "hot smoking",
+        "low and slow barbecue",
+        "grill",
+        "smoker"
+      ],
+      "kind": "Guide",
+      "origin": "Curated",
+      "publishedAt": null,
+      "addedAt": "2026-11-04T21:35:50.361015+00:00",
+      "summary": "Explore equipment setup and heat control for outdoor cooking."
+    },
+    {
+      "id": "charcoal",
+      "title": "Charcoal grill setup",
+      "url": "https://amazingribs.com/more-technique-and-science/grill-and-smoker-setup-and-firing/charcoal-grill-setup/",
+      "publisher": "AmazingRibs",
+      "elements": [
+        "fire"
+      ],
+      "tags": [
+        "grilling",
+        "ember roasting",
+        "grill"
+      ],
+      "kind": "Guide",
+      "origin": "Curated",
+      "publishedAt": null,
+      "addedAt": "2026-11-04T21:35:50.361015+00:00",
+      "summary": "A practical starting point for arranging charcoal and cooking zones."
+    },
+    {
+      "id": "smoking",
+      "title": "Curing and smoking resources",
+      "url": "https://nchfp.uga.edu/how/cure-smoke/",
+      "publisher": "National Center for Home Food Preservation",
+      "elements": [
+        "fire",
+        "water",
+        "earth"
+      ],
+      "tags": [
+        "cold smoking",
+        "hot smoking",
+        "curing",
+        "dry salting",
+        "smoker"
+      ],
+      "kind": "Reference",
+      "origin": "Curated",
+      "publishedAt": null,
+      "addedAt": "2026-11-04T21:35:50.361015+00:00",
+      "summary": "Start with tested preservation guidance when exploring curing and smoking."
+    },
+    {
+      "id": "pickling",
+      "title": "General information on pickling",
+      "url": "https://nchfp.uga.edu/how/pickle/pickling-general-information/general-information-on-pickling",
+      "publisher": "National Center for Home Food Preservation",
+      "elements": [
+        "water",
+        "earth"
+      ],
+      "tags": [
+        "pickling",
+        "curing",
+        "brining",
+        "salt packing"
+      ],
+      "kind": "Reference",
+      "origin": "Curated",
+      "publishedAt": null,
+      "addedAt": "2026-11-04T21:35:50.361015+00:00",
+      "summary": ""
+    },
+    {
+      "id": "tagine",
+      "title": "Lamb tagine with raisins and almonds",
+      "url": "https://www.lecreuset.com/lamb-tagine-with-raisins-and-almonds/LCR-2855.html",
+      "publisher": "Le Creuset",
+      "elements": [
+        "earth",
+        "water"
+      ],
+      "tags": [
+        "tagine cooking",
+        "braising",
+        "stewing",
+        "clay pot"
+      ],
+      "kind": "Recipe",
+      "origin": "Curated",
+      "publishedAt": null,
+      "addedAt": "2026-11-04T21:35:50.361015+00:00",
+      "summary": "A tagine-style recipe prepared in an enameled cast-iron oven."
+    },
+    {
+      "id": "sourdough",
+      "title": "Sourdough baking: the complete guide",
+      "url": "https://www.kingarthurbaking.com/learn/guides/sourdough",
+      "publisher": "King Arthur Baking",
+      "elements": [
+        "air"
+      ],
+      "tags": [
+        "sourdough fermentation",
+        "yeast leavening",
+        "scale"
+      ],
+      "kind": "Guide",
+      "origin": "Curated",
+      "publishedAt": null,
+      "addedAt": "2026-11-04T21:35:50.361015+00:00",
+      "summary": "Learn the stages of creating, maintaining, and baking with a starter."
+    },
+    {
+      "id": "stone-bake",
+      "title": "Putting your sourdough starter to work",
+      "url": "https://www.kingarthurbaking.com/learn/guides/sourdough/bake",
+      "publisher": "King Arthur Baking",
+      "elements": [
+        "air",
+        "earth"
+      ],
+      "tags": [
+        "sourdough fermentation",
+        "stone bed",
+        "baking stone"
+      ],
+      "kind": "Guide",
+      "origin": "Curated",
+      "publishedAt": null,
+      "addedAt": "2026-11-04T21:35:50.361015+00:00",
+      "summary": ""
+    },
+    {
+      "id": "baking-skills",
+      "title": "Baking skills video library",
+      "url": "https://www.kingarthurbaking.com/videos/baking-skills",
+      "publisher": "King Arthur Baking",
+      "elements": [
+        "air"
+      ],
+      "tags": [
+        "folding",
+        "whisking",
+        "creaming",
+        "yeast leavening",
+        "whisk"
+      ],
+      "kind": "Video library",
+      "origin": "Curated",
+      "publishedAt": null,
+      "addedAt": "2026-11-04T21:35:50.361015+00:00",
+      "summary": ""
+    },
+    {
+      "id": "pressure",
+      "title": "Using pressure canners",
+      "url": "https://nchfp.uga.edu/publications/uga-publications/using-pressure-canners/",
+      "publisher": "National Center for Home Food Preservation",
+      "elements": [
+        "water"
+      ],
+      "tags": [
+        "pressure steaming",
+        "pot"
+      ],
+      "kind": "Reference",
+      "origin": "Curated",
+      "publishedAt": null,
+      "addedAt": "2026-11-04T21:35:50.361015+00:00",
+      "summary": "Pressure canning is a preservation process with specific equipment and tested instructions."
+    },
+    {
+      "id": "hangi",
+      "title": "Cooking technology and Māori earth ovens",
+      "url": "https://teara.govt.nz/mi/cooking/page-1",
+      "publisher": "Te Ara Encyclopedia of New Zealand",
+      "elements": [
+        "earth",
+        "fire"
+      ],
+      "tags": [
+        "Māori hāngī",
+        "earth oven",
+        "umu",
+        "spit roasting"
+      ],
+      "kind": "Reference",
+      "origin": "Curated",
+      "publishedAt": null,
+      "addedAt": "2026-11-04T21:35:50.361015+00:00",
+      "summary": ""
+    },
+    {
+      "id": "kai",
+      "title": "Māori foods and cooking traditions",
+      "url": "https://teara.govt.nz/en/maori-foods-kai-maori?source=inline",
+      "publisher": "Te Ara Encyclopedia of New Zealand",
+      "elements": [
+        "earth",
+        "water"
+      ],
+      "tags": [
+        "Māori hāngī",
+        "earth oven",
+        "steaming"
+      ],
+      "kind": "Reference",
+      "origin": "Curated",
+      "publishedAt": null,
+      "addedAt": "2026-11-04T21:35:50.361015+00:00",
+      "summary": ""
+    }
+  ],
+  "feeds": [
+    {
+      "id": "bbq",
+      "name": "Barbecue Bible",
+      "url": "https://barbecuebible.com/feed/",
+      "host": "barbecuebible.com",
+      "defaultElement": "fire"
+    },
+    {
+      "id": "baking",
+      "name": "King Arthur Baking",
+      "url": "https://www.kingarthurbaking.com/blog/feed",
+      "host": "www.kingarthurbaking.com",
+      "defaultElement": "air"
+    }
+  ]
+}

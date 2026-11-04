@@ -74,8 +74,8 @@ PAGES = {'home':(home,"Chef Rain’s Golden Alchemy",'Chef Rain’s culinary wor
 def build():
     PAGES['account'] = (account, 'Your Chef Account', 'Manage your Golden Alchemy chef account and private profile.')
     for element in ('fire', 'water', 'earth', 'air'):
-        # Keep the article area empty until the owner starts the editorial phase.
-        PAGES[element] = (lambda: '<section class="element-placeholder wrap" style="min-height:35vh" aria-label="Future element articles"></section>', element.title(), 'Golden Alchemy culinary elements.')
+        from element_library import library
+        PAGES[element] = (lambda e=element: library(e), element.title()+' cooking library', 'Explore '+element+' cooking methods, tools, guides, and a growing article collection.')
     for slug,(render,title,description) in PAGES.items():
         folder=ROOT/slug
         folder.mkdir(parents=True,exist_ok=True)
@@ -89,7 +89,7 @@ def build():
         if slug == 'home':
             document = document.replace('</head>', '<link rel="stylesheet" href="/assets/home.css"></head>')
         if slug in ('fire', 'water', 'earth', 'air'):
-            document = document.replace('</head>', '<meta name="robots" content="noindex"></head>')
+            document = document.replace('</head>', '<link rel="stylesheet" href="/assets/library.css"><script src="/assets/library.js" defer></script></head>')
         if slug == 'theoracle':
             document = document.replace('</head>', '<script src="/assets/oracle.js" defer></script><script src="/assets/weather.js" defer></script></head>')
         document = document.replace('</head>', '<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="/assets/alchemy.css"><script src="/assets/alchemy.js" defer></script></head>')
