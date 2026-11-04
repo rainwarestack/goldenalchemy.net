@@ -55,3 +55,8 @@ Facebook Page ID supplied by user: 61595639807754. User screenshot shows Golden 
 Meta app Golden Alchemy created by the user: 1663600348484630. The app UI offers Instagram API with Facebook login. User reports linking Instagram @goldenalchemy.na to Facebook Page Golden Alchemy; not yet verified through API. Added instagram_basic, pages_show_list, and pages_read_engagement to the app; each showed Ready for testing. Prepared these same scopes in Graph API Explorer for Golden Alchemy. Awaiting user authorization through Get Token > Get User Access Token. No tokens generated or stored by the agent. No publishing or messaging scopes added.
 
 Not configured yet. Public social links are present on the holding page. Source configuration is local only. Automatic Instagram/TikTok ingestion needs a supported integration and account authorization. No credentials have been collected. Appearance awaits the user's design instructions.
+
+## Marketplace preview gate
+The Marketplace currently uses a client-side courtesy PIN screen in alchemy.js. It starts locked on every page load and does not save the PIN or unlock state. Its content remains in the public page source; this is not authentication and must not hold private menus or sensitive data. Use server-enforced access if secure previews are needed.
+
+The shared alchemy.css/alchemy.js theme adds scroll reveals, button glints, native cross-document view transitions in supporting browsers, and a session-scoped motion toggle. System reduced-motion preferences are respected. No animation dependencies are installed.
