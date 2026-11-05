@@ -524,17 +524,17 @@
       "id": "bbq",
       "name": "Barbecue Bible",
       "url": "https://barbecuebible.com/feed/",
-      "checkedAt": "2026-11-05T01:27:05.798882+00:00",
+      "checkedAt": "2026-11-05T02:30:41.733858+00:00",
       "status": "ok",
-      "refreshedAt": "2026-11-05T01:27:05.798882+00:00"
+      "refreshedAt": "2026-11-05T02:30:41.733858+00:00"
     },
     {
       "id": "baking",
       "name": "King Arthur Baking",
       "url": "https://www.kingarthurbaking.com/blog/feed",
-      "checkedAt": "2026-11-05T01:27:05.798882+00:00",
+      "checkedAt": "2026-11-05T02:30:41.733858+00:00",
       "status": "ok",
-      "refreshedAt": "2026-11-05T01:27:05.798882+00:00"
+      "refreshedAt": "2026-11-05T02:30:41.733858+00:00"
     }
   ]
 }
