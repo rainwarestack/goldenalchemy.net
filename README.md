@@ -29,6 +29,8 @@ The October 30 homepage wording is in `scripts/home_page.py`. Edit that module, 
 - `docs/assets/favicon.svg`: alchemy brand mark.
 - `scripts/account_page.py`, `docs/assets/account.js`, and `docs/assets/account.css`: real Supabase account/profile interface. `supabase/` contains the reviewed identity migration, rollback-only access tests, and configuration record. The pinned official SDK is vendored under `docs/assets/vendor/` with its license and integrity manifest; `python scripts/vendor_supabase.py` reproducibly downloads that version without executing package scripts.
 
+Account entry defaults to passwordless email sign-in links, with password forms retained as an optional fallback. A Google sign-in button is shown only if the dedicated Supabase project's public provider settings report it enabled (currently disabled). No OAuth client secrets belong in frontend source. See `supabase/README.md` for provider setup and the outstanding owner inbox test. `node --test tests/test_account_auth.cjs` tests the auth behavior with a fake SDK without sending emails or creating accounts.
+
 Editorial Unsplash photography is illustrative and is not Chef Rain portfolio content. Replace with owned photography when available. Image IDs are in the generator’s PHOTOS dictionary. Images use responsive sizes and lazy loading below the hero. External fonts and imagery depend on provider availability; system fonts and background colors remain as fallbacks. No paid services added.
 
 ## Hosting and Instagram

@@ -6,6 +6,26 @@
   const notify=(text,error=false)=>{status.textContent=text;status.classList.toggle('error',error);};
   const views=(name)=>['auth','profile','recovery'].forEach(v=>{$(`#${v}-view`).hidden=v!==name;});
   const busy=(form,on)=>form.querySelectorAll('button').forEach(b=>{b.disabled=on;});
+  let magicRetryAt=0;
+  function magicCooldown(){const left=Math.max(0,Math.ceil((magicRetryAt-Date.now())/1000)),button=$('#magic-submit');button.disabled=left>0;button.textContent=left>0?`Send another link in ${left}s`:'Email me a sign-in link';}
+  $('#magic-form').addEventListener('submit',async e=>{
+    e.preventDefault();if(!client||Date.now()<magicRetryAt)return;
+    const button=$('#magic-submit');button.disabled=true;$('#magic-result').textContent='Requesting your sign-in link…';
+    try{
+      const {error}=await client.auth.signInWithOtp({email:$('#magic-email').value.trim(),options:{emailRedirectTo:origin+'/account/',shouldCreateUser:config.signupEnabled===true}});
+      if(error){$('#magic-result').textContent=error.status===429?'Please wait before requesting another link.':'We could not request a sign-in link. Check the address and try again.';if(error.status===429)magicRetryAt=Date.now()+60000;return;}
+      magicRetryAt=Date.now()+60000;
+      $('#magic-result').textContent='If this address can sign in, an email is on its way. Open the newest link in this browser. Check your spam folder too.';
+    }catch{$('#magic-result').textContent='The email service could not be reached. Please try again.';}finally{magicCooldown();}
+  });
+  setInterval(()=>{if(magicRetryAt)magicCooldown();},1000);
+  $('#google-signin').addEventListener('click',async()=>{
+    if(!client)return;const button=$('#google-signin');button.disabled=true;notify('Opening Google sign-in…');
+    try{const {error}=await client.auth.signInWithOAuth({provider:'google',options:{redirectTo:origin+'/account/'}});if(error){notify('Google sign-in could not start. Use an email sign-in link or try again later.',true);button.disabled=false;}}catch{notify('Google sign-in could not be reached. Use an email sign-in link instead.',true);button.disabled=false;}
+  });
+  async function checkGoogleProvider(){
+    try{const response=await fetch(config.supabaseUrl+'/auth/v1/settings',{headers:{apikey:config.publishableKey},signal:AbortSignal.timeout(6000)});if(!response.ok)return;const settings=await response.json();$('#google-signin').hidden=settings.external?.google!==true;}catch{/* Email sign-in remains available if provider discovery is unavailable. */}
+  }
   function modeView(next){
     mode=next; views('auth'); $('#account-password').value='';
     document.querySelectorAll('[data-auth-mode]').forEach(b=>{const active=b.dataset.authMode===next;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));});
@@ -32,7 +52,7 @@
   }
   document.querySelectorAll('[data-auth-mode]').forEach(button=>button.addEventListener('click',()=>{
     if(button.dataset.authMode==='signup'&&!config?.signupEnabled){notify('New account registration is not open yet. Email delivery is being verified.');return;}
-    modeView(button.dataset.authMode);notify(mode==='signup'?'Choose a password of at least 8 characters.':'Sign in to your Golden Alchemy account.');
+    modeView(button.dataset.authMode);notify(mode==='signup'?'Choose a password of at least 8 characters, or use an email link above.':'Sign in with your password, or use an email link above.');
   }));
   $('#auth-form').addEventListener('submit',async e=>{
     e.preventDefault();if(!client)return; const form=e.currentTarget;busy(form,true);
@@ -78,6 +98,7 @@
       const response=await fetch('/data/backend.json',{cache:'no-cache'});if(!response.ok)throw new Error('No config');config=await response.json();
       if(config.project!=='golden-alchemy'||config.projectRef!=='fnjsbsoavsjnftbmmbtr'||config.supabaseUrl!=='https://fnjsbsoavsjnftbmmbtr.supabase.co'||!config.publishableKey?.startsWith('sb_publishable_'))throw new Error('Unexpected project');
       if(!config.authEnabled){notify('Account connection is being prepared. Registration will open after email delivery is verified.');return;}
+      $('#magic-help').textContent=config.signupEnabled===true?'New here? Your first sign-in creates your account. Open the email link in the same browser.':'For existing accounts. Open the email link in the same browser.';
       if(!window.supabase?.createClient)throw new Error('SDK unavailable');
       client=window.supabase.createClient(config.supabaseUrl,config.publishableKey,{auth:{flowType:'pkce',persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});
       recovering=new URLSearchParams(location.search).get('mode')==='recovery';
@@ -86,10 +107,14 @@
         else if(event==='SIGNED_OUT'){currentUser=null;profileExists=false;modeView('signin');}
         else if(event==='SIGNED_IN'&&!recovering){setTimeout(()=>refreshProfile(session).catch(()=>notify('Your profile could not be loaded.',true)),0);}
       });
+      const callbackQuery=new URLSearchParams(location.search),callbackHash=new URLSearchParams(location.hash.slice(1));
+      const callbackError=callbackQuery.has('error')||callbackQuery.has('error_code')||callbackHash.has('error')||callbackHash.has('error_code');
+      const hasCallback=callbackQuery.has('code')||callbackHash.has('access_token')||callbackError;
       const {data,error}=await client.auth.getSession();if(error)throw error;
       if(recovering){if(data.session){currentUser=data.session.user;views('recovery');notify('Enter a new password for your account.');}else{views('auth');notify('This recovery link is invalid or has expired. Request another reset email.',true);}}
-      else{await refreshProfile(data.session);if(!data.session)notify('Sign in to your Golden Alchemy account.');}
-      if(location.search.includes('code=')||location.hash.includes('access_token'))history.replaceState(null,'','/account/'+(recovering?'?mode=recovery':''));
+      else{await refreshProfile(data.session);if(!data.session)notify(hasCallback?'This sign-in link could not be used. It may have expired or been opened in another browser. Request a new link below.':'Enter your email for a password-free sign-in link.',hasCallback);}
+      if(hasCallback)history.replaceState(null,'','/account/'+(recovering?'?mode=recovery':''));
+      checkGoogleProvider();
     }catch{notify('Account services are temporarily unavailable. Please try again later.',true);}
   }
   init();

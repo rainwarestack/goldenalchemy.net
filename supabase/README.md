@@ -41,3 +41,13 @@ References:
 - https://supabase.com/docs/guides/database/postgres/row-level-security
 - https://supabase.com/docs/guides/auth/redirect-urls
 - https://supabase.com/docs/guides/auth/auth-smtp
+
+## Passwordless account entry — 2026-11-05
+
+The account page now defaults to email magic links through `signInWithOtp` and the existing Resend SMTP connection. The callback stays `https://www.goldenalchemy.net/account/`. PKCE requires opening the link in the same browser that requested it. New-account creation follows the existing `signupEnabled` rollout flag; database/provider settings remain the security boundary. Existing password sign-in, signup, and recovery remain under an optional disclosure. Email confirmation stays enabled. No membership entitlement is granted by sign-in.
+
+Public provider settings were checked in the dedicated Golden Alchemy project: email enabled, Google disabled, signups enabled, email autoconfirm disabled. No email was sent for this check. Mock-SDK regressions cover passwordless requests, sign-in-only mode, resend cooldown, Google gating, and invalid callbacks. Real email delivery and successful link completion still require an owner-driven inbox test at `/account/`; do not paste sign-in links into chat.
+
+The Google button is implemented but stays hidden until this project's `/auth/v1/settings` reports `external.google: true`. To connect it, use a Golden Alchemy-only Google Cloud OAuth web client and complete Google's required branding/publication setup. Configure the callback `https://fnjsbsoavsjnftbmmbtr.supabase.co/auth/v1/callback`, and the website origin `https://www.goldenalchemy.net`. Enter the client ID and secret directly in this project's Supabase Google provider settings. Never put a client secret in source, public JSON, browser code, or chat. Basic sign-in only; no Gmail, Drive, calendar, or unrelated project access is needed. Provider enablement is not proof of completed Google production review; verify both before enabling it for public use.
+
+Official references: https://supabase.com/docs/guides/auth/auth-email-passwordless and https://supabase.com/docs/guides/auth/social-sign-in/auth-google.
