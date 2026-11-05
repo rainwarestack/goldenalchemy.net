@@ -501,6 +501,22 @@
       "addedAt": "2026-11-04T21:29:19.156990+00:00",
       "summary": "",
       "thumbnail": "https://www.kingarthurbaking.com/sites/default/files/styles/featured_image/public/2026-10/Evaporated%20vs%20Condensed%20milk_Blog_2026_Shot%201_ALT_0045.jpg?itok=P51hzsBn"
+    },
+    {
+      "id": "260cc7e87b2267967e86",
+      "title": "This Thanksgiving, make your pies mini: Mini pies may be the secret to a stress-free celebration.",
+      "url": "https://www.kingarthurbaking.com/blog/2026/11/04/mini-Thanksgiving-pies",
+      "publisher": "King Arthur Baking",
+      "elements": [
+        "air"
+      ],
+      "tags": [],
+      "kind": "Article",
+      "origin": "RSS",
+      "publishedAt": null,
+      "addedAt": "2026-11-05T01:25:04.515494+00:00",
+      "summary": "",
+      "thumbnail": "https://www.kingarthurbaking.com/sites/default/files/styles/featured_image/public/2026-09/Mini-Apple-Pies_2026_Graphic_H_2990.jpg?itok=rgRpcGTb"
     }
   ],
   "sources": [
@@ -508,17 +524,17 @@
       "id": "bbq",
       "name": "Barbecue Bible",
       "url": "https://barbecuebible.com/feed/",
-      "checkedAt": "2026-11-04T21:55:43.659925+00:00",
+      "checkedAt": "2026-11-05T01:25:04.515494+00:00",
       "status": "ok",
-      "refreshedAt": "2026-11-04T21:55:43.659925+00:00"
+      "refreshedAt": "2026-11-05T01:25:04.515494+00:00"
     },
     {
       "id": "baking",
       "name": "King Arthur Baking",
       "url": "https://www.kingarthurbaking.com/blog/feed",
-      "checkedAt": "2026-11-04T21:55:43.659925+00:00",
+      "checkedAt": "2026-11-05T01:25:04.515494+00:00",
       "status": "ok",
-      "refreshedAt": "2026-11-04T21:55:43.659925+00:00"
+      "refreshedAt": "2026-11-05T01:25:04.515494+00:00"
     }
   ]
 }
