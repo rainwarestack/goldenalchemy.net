@@ -55,6 +55,14 @@ Authentication and private unique chef profiles now use the dedicated Supabase p
 
 ## Checks
 
+### Guild working preview
+
+The PIN-gated `/forum/` now contains a responsive personalized profile and five first-party kitchen tools: meal planning, ingredient checklist, prep tasks, recipe steps with independent timers, and finished-dish/moodboard capture. It inherits the global Obsidian/Cinzel theme. The fixed `Chef` display prefix, profile photo/banner, editable notes/photos, ordering, private drafts, emoji-only reaction previews, and visitor preview work without third-party APIs.
+
+This phase uses IndexedDB on the current browser, independently of Supabase accounts. It does **not** publish user profiles/photos or share reactions across visitors. Visitor mode is a visual preview, not an authorization boundary. Never add public upload/publish claims until authenticated storage, public-profile policies, and moderation are implemented and verified. Existing account RLS and membership grants are unchanged. Clearing browser site data removes this preview's saved content; the export button downloads the local data.
+
+For local QA without needing the owner's courtesy PIN, run `python scripts/preview_site.py` and open `http://127.0.0.1:4174/__guild-preview/`. That route is only served by the loopback development server and is not generated into `docs/`. `node --test tests/test_guild_core.cjs` checks elapsed-time timers, pause/reset/add-time behavior, board ordering, and next-day meal planning.
+
 ```powershell
 python scripts/build_site.py
 python -m py_compile scripts/build_site.py scripts/sync_instagram.py

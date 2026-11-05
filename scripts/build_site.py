@@ -2,6 +2,7 @@
 from pathlib import Path
 from html import escape
 from account_page import account
+from guild_page import guild
 
 ROOT = Path(__file__).resolve().parents[1] / 'docs'
 NAV = [('home', 'Home'), ('forum', 'Forum'), ('theoracle', 'The Oracle'), ('marketplace', 'Marketplace'), ('about', 'About')]
@@ -47,7 +48,7 @@ def home():
     return render_home(home_image, eyebrow, IG, TT)
 
 def forum_content():
-    return intro('THE COMMUNITY / COMING TO THE TABLE', 'Chef Rain’s Guild.', 'Every kind of chef. Every kind of kitchen. A future gathering place to share your work and learn from one another.') + f'''<section class="wrap guild-layout"><div class="guild-main"><div class="toolbar"><h2>The shared table</h2><span class="status">COMMUNITY COMING SOON</span></div><div class="guild-photo">{image('guild', 'Food preparation in a shared kitchen')}<span class="image-caption">A space for the craft. A place for the people.</span></div>{notice('The table is being set.', 'Dish uploads, likes, comments, and profiles will open when community accounts are ready. No posts or reactions are being collected yet.')}<div class="community-features"><div><span>01</span><h3>Share your craft</h3><p>Photos, films, and the stories behind a finished dish.</p></div><div><span>02</span><h3>Find your people</h3><p>Profiles with your specialty, biography, gallery, and social links.</p></div></div></div><aside class="guild-sidebar"><div class="panel copper-panel">{eyebrow('YOUR PLACE IN THE GUILD')}<h2>Chef comes first.</h2><p>Every public handle will begin with <strong>chef</strong>. From home cooks to seasoned professionals, everyone has a place.</p><div class="handle-example">@chefRain <span>EXAMPLE HANDLE</span></div><button class="button" data-community>Account availability →</button></div><div class="panel"><span class="status">PLANNED FEATURE</span><h3>Kitchen conversation</h3><p>Global chat for signed-in members. Chat and messaging are not active yet.</p></div><p class="small muted">Accounts, storage, moderation, reporting, and blocking will be configured before the community opens.</p></aside></section>'''
+    return guild()
 
 def oracle():
     recipe = f'''<article class="panel recipe-panel"><div class="panel-top">{eyebrow('01 / RECIPE LOOKUP')}<span class="status" id="recipe-state">LOADING</span></div><h2>What’s in your kitchen?</h2><p>Search recipes by dish name or ingredients.</p><form id="recipe-preview"><label for="recipe-query">Recipe or ingredients</label><div class="search-row"><input id="recipe-query" name="query" placeholder="Try chicken, garlic…" maxlength="100" required><button class="button" type="submit">Search <span class="signal-dot" aria-hidden="true"></span></button></div></form><p id="recipe-message" class="small" role="status" aria-live="polite">Loading the recipe collection…</p><div id="recipe-results"></div><button class="underlink" id="recipe-more" type="button" hidden>Show more recipes</button><p class="small muted" id="recipe-updated"></p><a class="underlink" href="https://www.themealdb.com/" target="_blank" rel="noopener noreferrer">Recipes provided by TheMealDB</a><noscript><p>Enable JavaScript to search recipes.</p></noscript></article>'''
@@ -92,6 +93,8 @@ def build():
         document = document.replace('<button class="button" data-community>Account availability →</button>', '<a class="button" href="/account/">Your chef account →</a>')
         if slug == 'account':
             document = document.replace('</head>', '<meta name="robots" content="noindex"><meta name="referrer" content="no-referrer"><link rel="stylesheet" href="/assets/account.css"><script src="/assets/vendor/supabase.js" defer></script><script src="/assets/account.js" defer></script></head>')
+        if slug == 'forum':
+            document = document.replace('</head>', '<link rel="stylesheet" href="/assets/guild.css"><script src="/assets/guild-core.js" defer></script><script src="/assets/guild.js" defer></script></head>')
         if slug == 'home':
             document = document.replace('</head>', '<link rel="stylesheet" href="/assets/home.css"></head>')
         if slug in ('fire', 'water', 'earth', 'air'):

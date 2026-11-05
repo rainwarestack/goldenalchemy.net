@@ -76,9 +76,10 @@
       }
       content.replaceChildren(document.querySelector('#market-template').content.cloneNode(true));
       const lock = document.createElement('button'); lock.className = 'market-lock'; lock.type = 'button'; lock.textContent = 'Lock preview';
-      lock.addEventListener('click', () => { content.replaceChildren(); content.hidden = true; gate.hidden = false; message.textContent = ''; input.focus(); });
+      lock.addEventListener('click', () => { document.dispatchEvent(new Event('ga:preview-lock')); content.replaceChildren(); content.hidden = true; gate.hidden = false; message.textContent = ''; input.focus(); });
       content.prepend(lock); gate.hidden = true; content.hidden = false;
       const heading = content.querySelector('h1'); heading.tabIndex = -1; heading.focus();
+      document.dispatchEvent(new Event('ga:preview-open'));
     });
   }
 })();
