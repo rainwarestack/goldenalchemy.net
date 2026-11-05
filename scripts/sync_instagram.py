@@ -41,6 +41,8 @@ def media_item(item):
 
 def main():
     token = os.environ.get("META_PAGE_ACCESS_TOKEN", "").strip()
+    if token.isdigit():
+        raise RuntimeError("Instagram refresh requires a Meta Page token, not a recipe API key.")
     if not token:
         raise RuntimeError("Add the META_PAGE_ACCESS_TOKEN repository secret before running this workflow.")
     profile = request_graph(INSTAGRAM_ID, {"fields": "id,username,media_count"}, token)

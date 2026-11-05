@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ['docs/**', 'scripts/sync_instagram.py', 'scripts/sync_recalls.py', 'scripts/sync_weather.py', 'scripts/sync_library.py', 'content/library-catalog.json', '.github/workflows/instagram-pages.yml']
+    paths: ['docs/**', 'scripts/sync_instagram.py', 'scripts/restore_instagram.py', 'scripts/sync_recalls.py', 'scripts/sync_weather.py', 'scripts/sync_library.py', 'scripts/sync_recipes.py', 'content/library-catalog.json', '.github/workflows/instagram-pages.yml']
   schedule:
     - cron: '17 * * * *'
 
@@ -40,7 +40,6 @@ jobs:
       pages: write
       id-token: write
     needs: credentials
-    if: needs.credentials.outputs.configured == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     environment:
@@ -51,7 +50,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Preserve last published public Instagram feed
+        run: python scripts/restore_instagram.py
       - name: Fetch Golden Alchemy Instagram posts
+        continue-on-error: true
         env:
           META_PAGE_ACCESS_TOKEN: ${{ secrets.META_PAGE_ACCESS_TOKEN }}
         run: python scripts/sync_instagram.py
@@ -61,11 +63,15 @@ jobs:
         run: python scripts/sync_weather.py
       - name: Refresh elemental article library
         run: python scripts/sync_library.py
+      - name: Refresh recipe catalog with private production key
+        env:
+          THEMEALDB_API_KEY: ${{ secrets.THEMEALDB_API_KEY }}
+        run: python scripts/sync_recipes.py
       - name: Preserve collected article links in the Golden Alchemy repository
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add content/library-archive.json
+          git add content/library-archive.json content/recipe-archive.json
           if ! git diff --cached --quiet; then
             git commit -m "Archive elemental article links [skip ci]"
             git push origin HEAD:main

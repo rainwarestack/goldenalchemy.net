@@ -26,7 +26,6 @@
     dialog.addEventListener('click', e => { if (e.target === dialog) { const r = dialog.getBoundingClientRect(); if(e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) dialog.close(); } });
     dialog.addEventListener('close', () => { $$('video', dialog).forEach(video => video.pause()); });
   });
-  $('#recipe-preview')?.addEventListener('submit', e => { e.preventDefault(); $('#recipe-message').textContent = 'Recipe discovery is coming soon. Search is not connected yet; your entry has not been sent anywhere.'; });
   const tiktokButton = $('#load-tiktok');
   tiktokButton?.addEventListener('click', () => {
     const mount = $('#tiktok-mount'), profile = mount.dataset.profile;
@@ -134,7 +133,7 @@
       posts = data.items.filter(p => p && ['IMAGE','VIDEO','CAROUSEL_ALBUM'].includes(p.media_type) && safeUrl(p.permalink, true));
       render(); renderActivity();
       const date = new Date(data.updatedAt);
-      if (!Number.isNaN(date.getTime())) { const stale = Date.now() - date.getTime() > 86400000; timestamp.textContent = `${stale ? 'Updates delayed · ' : ''}Instagram · Last refreshed ${date.toLocaleString([], {dateStyle:'medium',timeStyle:'short'})}${stale ? '. Showing the last available collection.' : ''}`; }
+      if (!Number.isNaN(date.getTime())) { const stale = data.status === 'delayed' || Date.now() - date.getTime() > 86400000; timestamp.textContent = `${stale ? 'Updates delayed · ' : ''}Instagram · Last refreshed ${date.toLocaleString([], {dateStyle:'medium',timeStyle:'short'})}${stale ? '. Showing the last available collection.' : ''}`; }
     } catch { posts = []; renderActivity(true); empty('The kitchen feed is taking a moment.', 'We couldn’t load the gallery. You can still find Chef Rain’s latest work on Instagram.', true); }
   }
   load();
