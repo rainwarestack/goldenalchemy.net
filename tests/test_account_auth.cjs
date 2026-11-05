@@ -5,12 +5,12 @@ const vm=require('node:vm');
 const fs=require('node:fs');
 const source=fs.readFileSync(require('node:path').join(__dirname,'../docs/assets/account.js'),'utf8');
 
-async function setup({signup=true,google=false,query='',otpError=null}={}){
+async function setup({signup=true,google=false,query='',otpError=null,otpResponse=null}={}){
   const nodes=new Map(),requests=[],ticks=[];
   const element=id=>{if(!nodes.has(id))nodes.set(id,{value:'',hidden:id==='#google-signin',disabled:false,textContent:'',dataset:{},classList:{toggle(){}},events:{},addEventListener(name,fn){this.events[name]=fn;},querySelectorAll(){return [];},setAttribute(){},reset(){},reportValidity(){return true;}});return nodes.get(id);};
   const modes=['signin','signup'].map(mode=>Object.assign(element(mode),{dataset:{authMode:mode}}));
   const config={project:'golden-alchemy',projectRef:'fnjsbsoavsjnftbmmbtr',supabaseUrl:'https://fnjsbsoavsjnftbmmbtr.supabase.co',publishableKey:'sb_publishable_test',authEnabled:true,signupEnabled:signup};
-  const auth={onAuthStateChange(){},getSession:async()=>({data:{session:null},error:null}),signInWithOtp:async data=>{requests.push({type:'email',data:JSON.parse(JSON.stringify(data))});return {error:otpError};},signInWithOAuth:async data=>{requests.push({type:'google',data:JSON.parse(JSON.stringify(data))});return {error:null};}};
+  const auth={onAuthStateChange(){},getSession:async()=>({data:{session:null},error:null}),signInWithOtp:async data=>{requests.push({type:'email',data:JSON.parse(JSON.stringify(data))});return otpResponse||{error:otpError};},signInWithOAuth:async data=>{requests.push({type:'google',data:JSON.parse(JSON.stringify(data))});return {error:null};}};
   const env={document:{querySelector:element,querySelectorAll:()=>modes},window:{supabase:{createClient:()=>({auth})}},location:{search:query,hash:''},history:{replaceState(){}},URLSearchParams,AbortSignal,setInterval:fn=>{ticks.push(fn);return 1;},setTimeout,fetch:async url=>({ok:true,json:async()=>url==='/data/backend.json'?config:{external:{google}}})};
   vm.runInNewContext(source,env);await new Promise(setImmediate);
   return {element,requests,ticks,submit:()=>element('#magic-form').events.submit({preventDefault(){},currentTarget:element('#magic-form')})};
@@ -27,6 +27,12 @@ test('existing-account-only mode cannot silently create a new account',async()=>
   const app=await setup({signup:false});app.element('#magic-email').value='chef@example.com';await app.submit();
   assert.equal(app.requests[0].data.options.shouldCreateUser,false);
   assert.match(app.element('#magic-help').textContent,/existing accounts/);
+});
+test('a slow email request cannot be duplicated before it completes',async()=>{
+  let complete;const response=new Promise(resolve=>{complete=resolve;});
+  const app=await setup({otpResponse:response}),first=app.submit();await app.submit();
+  assert.equal(app.requests.length,1);assert.equal(app.element('#magic-submit').disabled,true);
+  complete({error:null});await first;
 });
 test('Google is hidden until enabled and never starts OAuth during page load',async()=>{
   const off=await setup();assert.equal(off.element('#google-signin').hidden,true);assert.equal(off.requests.length,0);

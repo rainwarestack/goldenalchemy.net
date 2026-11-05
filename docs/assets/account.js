@@ -6,17 +6,17 @@
   const notify=(text,error=false)=>{status.textContent=text;status.classList.toggle('error',error);};
   const views=(name)=>['auth','profile','recovery'].forEach(v=>{$(`#${v}-view`).hidden=v!==name;});
   const busy=(form,on)=>form.querySelectorAll('button').forEach(b=>{b.disabled=on;});
-  let magicRetryAt=0;
-  function magicCooldown(){const left=Math.max(0,Math.ceil((magicRetryAt-Date.now())/1000)),button=$('#magic-submit');button.disabled=left>0;button.textContent=left>0?`Send another link in ${left}s`:'Email me a sign-in link';}
+  let magicRetryAt=0,magicPending=false;
+  function magicCooldown(){const left=Math.max(0,Math.ceil((magicRetryAt-Date.now())/1000)),button=$('#magic-submit');button.disabled=magicPending||left>0;button.textContent=magicPending?'Requesting your link…':left>0?`Send another link in ${left}s`:'Email me a sign-in link';}
   $('#magic-form').addEventListener('submit',async e=>{
-    e.preventDefault();if(!client||Date.now()<magicRetryAt)return;
-    const button=$('#magic-submit');button.disabled=true;$('#magic-result').textContent='Requesting your sign-in link…';
+    e.preventDefault();if(!client||magicPending||Date.now()<magicRetryAt)return;
+    magicPending=true;magicCooldown();$('#magic-result').textContent='Requesting your sign-in link…';
     try{
       const {error}=await client.auth.signInWithOtp({email:$('#magic-email').value.trim(),options:{emailRedirectTo:origin+'/account/',shouldCreateUser:config.signupEnabled===true}});
       if(error){$('#magic-result').textContent=error.status===429?'Please wait before requesting another link.':'We could not request a sign-in link. Check the address and try again.';if(error.status===429)magicRetryAt=Date.now()+60000;return;}
       magicRetryAt=Date.now()+60000;
       $('#magic-result').textContent='If this address can sign in, an email is on its way. Open the newest link in this browser. Check your spam folder too.';
-    }catch{$('#magic-result').textContent='The email service could not be reached. Please try again.';}finally{magicCooldown();}
+    }catch{$('#magic-result').textContent='The email service could not be reached. Please try again.';}finally{magicPending=false;magicCooldown();}
   });
   setInterval(()=>{if(magicRetryAt)magicCooldown();},1000);
   $('#google-signin').addEventListener('click',async()=>{
