@@ -6,6 +6,8 @@
   const notify=(text,error=false)=>{status.textContent=text;status.classList.toggle('error',error);};
   const views=(name)=>['auth','profile','recovery'].forEach(v=>{$(`#${v}-view`).hidden=v!==name;});
   const busy=(form,on)=>form.querySelectorAll('button').forEach(b=>{b.disabled=on;});
+  function usernamePreview(){const name=$('#chef-username').value.trim();$('#username-preview').textContent=name?'Your username: @chef'+name:'Your username will start with @chef.';}
+  $('#chef-username').addEventListener('input',usernamePreview);
   let magicRetryAt=0,magicPending=false;
   function magicCooldown(){const left=Math.max(0,Math.ceil((magicRetryAt-Date.now())/1000)),button=$('#magic-submit');button.disabled=magicPending||left>0;button.textContent=magicPending?'Requesting your link…':left>0?`Send another link in ${left}s`:'Email me a sign-in link';}
   $('#magic-form').addEventListener('submit',async e=>{
@@ -45,7 +47,7 @@
     ]);
     if(profile.error||membership.error){notify('We could not load your profile. Try signing in again; no changes have been saved.',true);return;}
     profileExists=!!profile.data;
-    $('#chef-username').value=profile.data?.username||'';$('#chef-name').value=profile.data?.display_name||'';
+    $('#chef-username').value=(profile.data?.username||'').replace(/^chef/i,'');usernamePreview();$('#chef-name').value=profile.data?.display_name||'';
     $('#chef-specialty').value=profile.data?.specialty||'';$('#chef-biography').value=profile.data?.biography||'';
     $('#membership-status').textContent=membership.data===true?'Your membership is active. Community features are still being prepared.':'No active Guild membership. Membership plans and community features are coming later.';
     if(!profileExists)notify('Your account is ready. Choose a chef username to create your private profile.');
@@ -79,7 +81,8 @@
   });
   $('#profile-form').addEventListener('submit',async e=>{
     e.preventDefault();if(!client||!currentUser)return;
-    const username=$('#chef-username').value.trim();if(!/^chef[a-z0-9_]{1,20}$/i.test(username)){notify('Use chef followed by letters, numbers, or underscores; 5–24 characters total.',true);return;}
+    const name=$('#chef-username').value.trim();if(!/^[a-z0-9_]{1,20}$/i.test(name)){notify('Enter 1–20 letters, numbers, or underscores. We add chef automatically.',true);return;}
+    const username='chef'+name;
     const form=e.currentTarget;busy(form,true);
     const values={username,display_name:$('#chef-name').value.trim(),specialty:$('#chef-specialty').value.trim(),biography:$('#chef-biography').value.trim()};
     try{

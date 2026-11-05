@@ -5,13 +5,15 @@ const vm=require('node:vm');
 const fs=require('node:fs');
 const source=fs.readFileSync(require('node:path').join(__dirname,'../docs/assets/account.js'),'utf8');
 
-async function setup({signup=true,google=false,query='',otpError=null,otpResponse=null}={}){
+async function setup({signup=true,google=false,query='',otpError=null,otpResponse=null,profile=undefined}={}){
   const nodes=new Map(),requests=[],ticks=[];
   const element=id=>{if(!nodes.has(id))nodes.set(id,{value:'',hidden:id==='#google-signin',disabled:false,textContent:'',dataset:{},classList:{toggle(){}},events:{},addEventListener(name,fn){this.events[name]=fn;},querySelectorAll(){return [];},setAttribute(){},reset(){},reportValidity(){return true;}});return nodes.get(id);};
   const modes=['signin','signup'].map(mode=>Object.assign(element(mode),{dataset:{authMode:mode}}));
   const config={project:'golden-alchemy',projectRef:'fnjsbsoavsjnftbmmbtr',supabaseUrl:'https://fnjsbsoavsjnftbmmbtr.supabase.co',publishableKey:'sb_publishable_test',authEnabled:true,signupEnabled:signup};
-  const auth={onAuthStateChange(){},getSession:async()=>({data:{session:null},error:null}),signInWithOtp:async data=>{requests.push({type:'email',data:JSON.parse(JSON.stringify(data))});return otpResponse||{error:otpError};},signInWithOAuth:async data=>{requests.push({type:'google',data:JSON.parse(JSON.stringify(data))});return {error:null};}};
-  const env={document:{querySelector:element,querySelectorAll:()=>modes},window:{supabase:{createClient:()=>({auth})}},location:{search:query,hash:''},history:{replaceState(){}},URLSearchParams,AbortSignal,setInterval:fn=>{ticks.push(fn);return 1;},setTimeout,fetch:async url=>({ok:true,json:async()=>url==='/data/backend.json'?config:{external:{google}}})};
+  const auth={onAuthStateChange(){},getSession:async()=>({data:{session:profile===undefined?null:{user:{id:'test-user'}}},error:null}),signInWithOtp:async data=>{requests.push({type:'email',data:JSON.parse(JSON.stringify(data))});return otpResponse||{error:otpError};},signInWithOAuth:async data=>{requests.push({type:'google',data:JSON.parse(JSON.stringify(data))});return {error:null};}};
+  const client={auth,rpc:async()=>({data:false}),from:()=>({select:()=>({eq:()=>({maybeSingle:async()=>({data:profile})})}),insert:values=>saveProfile(values),update:values=>({eq:()=>saveProfile(values)})})};
+  function saveProfile(values){requests.push({type:'profile',data:JSON.parse(JSON.stringify(values))});return {select:()=>({single:async()=>({data:{user_id:'test-user'},error:null})})};}
+  const env={document:{querySelector:element,querySelectorAll:()=>modes},window:{supabase:{createClient:()=>client}},location:{search:query,hash:''},history:{replaceState(){}},URLSearchParams,AbortSignal,setInterval:fn=>{ticks.push(fn);return 1;},setTimeout,fetch:async url=>({ok:true,json:async()=>url==='/data/backend.json'?config:{external:{google}}})};
   vm.runInNewContext(source,env);await new Promise(setImmediate);
   return {element,requests,ticks,submit:()=>element('#magic-form').events.submit({preventDefault(){},currentTarget:element('#magic-form')})};
 }
@@ -48,5 +50,20 @@ test('expired callback gives a retry path without reflecting provider error text
   const app=await setup({query:'?error=access_denied&error_description=untrusted_message'});
   assert.match(app.element('#account-status').textContent,/Request a new link/);
   assert.doesNotMatch(app.element('#account-status').textContent,/untrusted_message/);
+});
+test('existing usernames reload as a suffix and save without duplicating chef',async()=>{
+  const app=await setup({profile:{username:'chefRain'}});
+  assert.equal(app.element('#chef-username').value,'Rain');
+  assert.equal(app.element('#username-preview').textContent,'Your username: @chefRain');
+  await app.element('#profile-form').events.submit({preventDefault(){},currentTarget:app.element('#profile-form')});
+  assert.equal(app.requests.find(x=>x.type==='profile').data.username,'chefRain');
+});
+test('new profiles automatically get the prefix and preserve username validation',async()=>{
+  const app=await setup({profile:null});app.element('#chef-username').value='Rain_2';app.element('#chef-username').events.input();
+  assert.equal(app.element('#username-preview').textContent,'Your username: @chefRain_2');
+  const event={preventDefault(){},currentTarget:app.element('#profile-form')};await app.element('#profile-form').events.submit(event);
+  assert.equal(app.requests.find(x=>x.type==='profile').data.username,'chefRain_2');
+  app.element('#chef-username').value='not a valid handle';await app.element('#profile-form').events.submit(event);
+  assert.equal(app.requests.filter(x=>x.type==='profile').length,1);
 });
 
