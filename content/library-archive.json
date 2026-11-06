@@ -175,6 +175,22 @@
       "thumbnail": "https://d21klxpge3tttg.cloudfront.net/wp-content/uploads/2015/05/02-480.jpg"
     },
     {
+      "id": "a0c9d753b9fc12027f44",
+      "title": "Back to Basics: Bacon-Wrapped Acorn Squash? You Bet.",
+      "url": "https://barbecuebible.com/2026/11/06/bacon-wrapped-acorn-squash/",
+      "publisher": "Barbecue Bible",
+      "elements": [
+        "fire"
+      ],
+      "tags": [],
+      "kind": "Article",
+      "origin": "RSS",
+      "publishedAt": "2026-11-06T11:00:33+00:00",
+      "addedAt": "2026-11-06T15:58:03.938741+00:00",
+      "summary": "",
+      "thumbnail": "https://d21klxpge3tttg.cloudfront.net/wp-content/uploads/2023/02/BannerBBQB-WF.jpg"
+    },
+    {
       "id": "4acb28ea9bc03e53dc83",
       "title": "The 12 best recipes to bake in September: Time for apples!",
       "url": "https://www.kingarthurbaking.com/blog/2025/09/02/best-september-recipes",
@@ -524,17 +540,17 @@
       "id": "bbq",
       "name": "Barbecue Bible",
       "url": "https://barbecuebible.com/feed/",
-      "checkedAt": "2026-11-06T07:57:49.274064+00:00",
+      "checkedAt": "2026-11-06T15:58:03.938741+00:00",
       "status": "ok",
-      "refreshedAt": "2026-11-06T07:57:49.274064+00:00"
+      "refreshedAt": "2026-11-06T15:58:03.938741+00:00"
     },
     {
       "id": "baking",
       "name": "King Arthur Baking",
       "url": "https://www.kingarthurbaking.com/blog/feed",
-      "checkedAt": "2026-11-06T07:57:49.274064+00:00",
+      "checkedAt": "2026-11-06T15:58:03.938741+00:00",
       "status": "ok",
-      "refreshedAt": "2026-11-06T07:57:49.274064+00:00"
+      "refreshedAt": "2026-11-06T15:58:03.938741+00:00"
     }
   ]
 }
