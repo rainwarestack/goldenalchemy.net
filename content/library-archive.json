@@ -533,6 +533,22 @@
       "addedAt": "2026-11-05T01:25:04.515494+00:00",
       "summary": "",
       "thumbnail": "https://www.kingarthurbaking.com/sites/default/files/styles/featured_image/public/2026-09/Mini-Apple-Pies_2026_Graphic_H_2990.jpg?itok=rgRpcGTb"
+    },
+    {
+      "id": "08f822221878467036d5",
+      "title": "The unexpected pan you need this holiday season : The case to make everything mini.",
+      "url": "https://www.kingarthurbaking.com/blog/2026/11/09/mini-muffin-pan-recipes",
+      "publisher": "King Arthur Baking",
+      "elements": [
+        "air"
+      ],
+      "tags": [],
+      "kind": "Article",
+      "origin": "RSS",
+      "publishedAt": null,
+      "addedAt": "2026-11-09T22:26:24.876925+00:00",
+      "summary": "",
+      "thumbnail": "https://www.kingarthurbaking.com/sites/default/files/styles/featured_image/public/2026-09/Mini-Apple-Pies_2026_INT_H_3030.jpg?itok=9aeLeuBn"
     }
   ],
   "sources": [
@@ -540,17 +556,17 @@
       "id": "bbq",
       "name": "Barbecue Bible",
       "url": "https://barbecuebible.com/feed/",
-      "checkedAt": "2026-11-09T11:42:06.092723+00:00",
+      "checkedAt": "2026-11-09T22:26:24.876925+00:00",
       "status": "ok",
-      "refreshedAt": "2026-11-09T11:42:06.092723+00:00"
+      "refreshedAt": "2026-11-09T22:26:24.876925+00:00"
     },
     {
       "id": "baking",
       "name": "King Arthur Baking",
       "url": "https://www.kingarthurbaking.com/blog/feed",
-      "checkedAt": "2026-11-09T11:42:06.092723+00:00",
+      "checkedAt": "2026-11-09T22:26:24.876925+00:00",
       "status": "ok",
-      "refreshedAt": "2026-11-09T11:42:06.092723+00:00"
+      "refreshedAt": "2026-11-09T22:26:24.876925+00:00"
     }
   ]
 }
