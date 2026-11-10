@@ -389,6 +389,38 @@
       "thumbnail": "https://www.kingarthurbaking.com/sites/default/files/styles/featured_image/public/2026-09/Pumpkin-Milk-Bread_2026_Lifestyle_H_3153.jpg?itok=2KSFxMLW"
     },
     {
+      "id": "e96e4c3a37f65bef1fd4",
+      "title": "How long can butter sit out?: For the best baking success, here's the deal on saving softened butter for later.",
+      "url": "https://www.kingarthurbaking.com/blog/2026/10/01/how-long-can-butter-sit-out",
+      "publisher": "King Arthur Baking",
+      "elements": [
+        "air"
+      ],
+      "tags": [],
+      "kind": "Article",
+      "origin": "RSS",
+      "publishedAt": null,
+      "addedAt": "2026-11-10T20:52:24.502221+00:00",
+      "summary": "",
+      "thumbnail": "https://www.kingarthurbaking.com/sites/default/files/styles/featured_image/public/2023-10/Soften-Butter_1837.jpg?itok=0S4Vr_z0"
+    },
+    {
+      "id": "3b82e8122bd25ce56ad1",
+      "title": "What is piloncillo? This sweetener makes great cookies, pan dulce, and more: Use this traditional Mexican unrefined sugar for a dash of flavor and history.",
+      "url": "https://www.kingarthurbaking.com/blog/2026/10/01/piloncillo",
+      "publisher": "King Arthur Baking",
+      "elements": [
+        "air"
+      ],
+      "tags": [],
+      "kind": "Article",
+      "origin": "RSS",
+      "publishedAt": null,
+      "addedAt": "2026-11-10T20:52:24.502221+00:00",
+      "summary": "",
+      "thumbnail": "https://www.kingarthurbaking.com/sites/default/files/styles/featured_image/public/2023-10/Piloncillo.jpg?itok=5Re2mbld"
+    },
+    {
       "id": "7de61bb3b1ccac5b3b68",
       "title": "19 non-traditional Thanksgiving desserts that aren't pie : Cakes, cookies, and even a tiramisu for your holiday dessert table.",
       "url": "https://www.kingarthurbaking.com/blog/2026/10/02/non-traditional-thanksgiving-desserts",
@@ -556,17 +588,17 @@
       "id": "bbq",
       "name": "Barbecue Bible",
       "url": "https://barbecuebible.com/feed/",
-      "checkedAt": "2026-11-10T13:31:48.522213+00:00",
+      "checkedAt": "2026-11-10T20:52:24.502221+00:00",
       "status": "ok",
-      "refreshedAt": "2026-11-10T13:31:48.522213+00:00"
+      "refreshedAt": "2026-11-10T20:52:24.502221+00:00"
     },
     {
       "id": "baking",
       "name": "King Arthur Baking",
       "url": "https://www.kingarthurbaking.com/blog/feed",
-      "checkedAt": "2026-11-10T13:31:48.522213+00:00",
+      "checkedAt": "2026-11-10T20:52:24.502221+00:00",
       "status": "ok",
-      "refreshedAt": "2026-11-10T13:31:48.522213+00:00"
+      "refreshedAt": "2026-11-10T20:52:24.502221+00:00"
     }
   ]
 }
