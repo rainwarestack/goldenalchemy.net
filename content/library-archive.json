@@ -191,6 +191,24 @@
       "thumbnail": "https://d21klxpge3tttg.cloudfront.net/wp-content/uploads/2023/02/BannerBBQB-WF.jpg"
     },
     {
+      "id": "d065b6315bfdfe1d426d",
+      "title": "Taking Tailgating to a Monumental New Level!",
+      "url": "https://barbecuebible.com/2026/11/11/tailgating-appetizers-monument-grills/",
+      "publisher": "Barbecue Bible",
+      "elements": [
+        "fire"
+      ],
+      "tags": [
+        "grilling"
+      ],
+      "kind": "Article",
+      "origin": "RSS",
+      "publishedAt": "2026-11-11T15:45:48+00:00",
+      "addedAt": "2026-11-11T16:14:51.176183+00:00",
+      "summary": "",
+      "thumbnail": "https://d21klxpge3tttg.cloudfront.net/wp-content/uploads/2026/11/Race_Tailgaters-2-828x1024.jpg"
+    },
+    {
       "id": "4acb28ea9bc03e53dc83",
       "title": "The 12 best recipes to bake in September: Time for apples!",
       "url": "https://www.kingarthurbaking.com/blog/2025/09/02/best-september-recipes",
@@ -581,6 +599,22 @@
       "addedAt": "2026-11-09T22:26:24.876925+00:00",
       "summary": "",
       "thumbnail": "https://www.kingarthurbaking.com/sites/default/files/styles/featured_image/public/2026-09/Mini-Apple-Pies_2026_INT_H_3030.jpg?itok=9aeLeuBn"
+    },
+    {
+      "id": "309c46c03e815ffb4cf5",
+      "title": "The best Thanksgiving baking tips from Ina Garten, Erin McDowell, and more pro bakers: Top tips from the Things Bakers Know podcast.",
+      "url": "https://www.kingarthurbaking.com/blog/2026/11/11/thanksgiving-baking-tips",
+      "publisher": "King Arthur Baking",
+      "elements": [
+        "air"
+      ],
+      "tags": [],
+      "kind": "Article",
+      "origin": "RSS",
+      "publishedAt": null,
+      "addedAt": "2026-11-11T16:14:51.176183+00:00",
+      "summary": "",
+      "thumbnail": "https://www.kingarthurbaking.com/sites/default/files/styles/featured_image/public/2026-09/Whole-Wheat-Dinner-Rolls_2026_Lifestyle_H_3070.jpg?itok=9XbOrURN"
     }
   ],
   "sources": [
@@ -588,17 +622,17 @@
       "id": "bbq",
       "name": "Barbecue Bible",
       "url": "https://barbecuebible.com/feed/",
-      "checkedAt": "2026-11-11T07:49:30.796494+00:00",
+      "checkedAt": "2026-11-11T16:14:51.176183+00:00",
       "status": "ok",
-      "refreshedAt": "2026-11-11T07:49:30.796494+00:00"
+      "refreshedAt": "2026-11-11T16:14:51.176183+00:00"
     },
     {
       "id": "baking",
       "name": "King Arthur Baking",
       "url": "https://www.kingarthurbaking.com/blog/feed",
-      "checkedAt": "2026-11-11T07:49:30.796494+00:00",
+      "checkedAt": "2026-11-11T16:14:51.176183+00:00",
       "status": "ok",
-      "refreshedAt": "2026-11-11T07:49:30.796494+00:00"
+      "refreshedAt": "2026-11-11T16:14:51.176183+00:00"
     }
   ]
 }
