@@ -391,6 +391,22 @@
       "thumbnail": "https://www.kingarthurbaking.com/sites/default/files/styles/featured_image/public/2026-09/400968%20Baker%27s%20Reserve%20Bread%20Flour_Spring%20Lifestyle%20Direct_2027_Shot%201_H_2674.jpg?itok=1e7R1a4L"
     },
     {
+      "id": "c86a05af1b18365d052f",
+      "title": "Our top-ranked cookie recipes: Eight cookies that have stood the test of time.",
+      "url": "https://www.kingarthurbaking.com/blog/2026/10/01/best-cookie-recipes",
+      "publisher": "King Arthur Baking",
+      "elements": [
+        "air"
+      ],
+      "tags": [],
+      "kind": "Article",
+      "origin": "RSS",
+      "publishedAt": null,
+      "addedAt": "2026-11-12T20:52:52.157137+00:00",
+      "summary": "",
+      "thumbnail": "https://www.kingarthurbaking.com/sites/default/files/styles/featured_image/public/2026-04/Classic-Chocolate-Chip-Cookie-10.jpg?itok=d8FxUOFR"
+    },
+    {
       "id": "da6cc434cb173810a5b7",
       "title": "The 12 best recipes to bake in October: It’s peak baking season — here’s what to make.",
       "url": "https://www.kingarthurbaking.com/blog/2026/10/01/fall-recipes",
@@ -622,17 +638,17 @@
       "id": "bbq",
       "name": "Barbecue Bible",
       "url": "https://barbecuebible.com/feed/",
-      "checkedAt": "2026-11-12T12:49:44.069040+00:00",
+      "checkedAt": "2026-11-12T20:52:52.157137+00:00",
       "status": "ok",
-      "refreshedAt": "2026-11-12T12:49:44.069040+00:00"
+      "refreshedAt": "2026-11-12T20:52:52.157137+00:00"
     },
     {
       "id": "baking",
       "name": "King Arthur Baking",
       "url": "https://www.kingarthurbaking.com/blog/feed",
-      "checkedAt": "2026-11-12T12:49:44.069040+00:00",
+      "checkedAt": "2026-11-12T20:52:52.157137+00:00",
       "status": "ok",
-      "refreshedAt": "2026-11-12T12:49:44.069040+00:00"
+      "refreshedAt": "2026-11-12T20:52:52.157137+00:00"
     }
   ]
 }
