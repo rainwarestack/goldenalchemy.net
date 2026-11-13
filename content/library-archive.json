@@ -209,6 +209,24 @@
       "thumbnail": "https://d21klxpge3tttg.cloudfront.net/wp-content/uploads/2026/11/Race_Tailgaters-2-828x1024.jpg"
     },
     {
+      "id": "caa6d1e03da4772a6efc",
+      "title": "How to Smoke a Turkey: The Complete Thanksgiving Guide",
+      "url": "https://barbecuebible.com/2026/11/13/how-to-smoke-a-turkey/",
+      "publisher": "Barbecue Bible",
+      "elements": [
+        "fire"
+      ],
+      "tags": [
+        "hot smoking"
+      ],
+      "kind": "Article",
+      "origin": "RSS",
+      "publishedAt": "2026-11-13T11:00:18+00:00",
+      "addedAt": "2026-11-13T17:48:51.219602+00:00",
+      "summary": "",
+      "thumbnail": "https://d21klxpge3tttg.cloudfront.net/wp-content/uploads/2025/02/Turkey-Adobo-with-Mojo-Sauce.jpg"
+    },
+    {
       "id": "4acb28ea9bc03e53dc83",
       "title": "The 12 best recipes to bake in September: Time for apples!",
       "url": "https://www.kingarthurbaking.com/blog/2025/09/02/best-september-recipes",
@@ -638,17 +656,17 @@
       "id": "bbq",
       "name": "Barbecue Bible",
       "url": "https://barbecuebible.com/feed/",
-      "checkedAt": "2026-11-13T09:38:06.124569+00:00",
+      "checkedAt": "2026-11-13T17:48:51.219602+00:00",
       "status": "ok",
-      "refreshedAt": "2026-11-13T09:38:06.124569+00:00"
+      "refreshedAt": "2026-11-13T17:48:51.219602+00:00"
     },
     {
       "id": "baking",
       "name": "King Arthur Baking",
       "url": "https://www.kingarthurbaking.com/blog/feed",
-      "checkedAt": "2026-11-13T09:38:06.124569+00:00",
+      "checkedAt": "2026-11-13T17:48:51.219602+00:00",
       "status": "ok",
-      "refreshedAt": "2026-11-13T09:38:06.124569+00:00"
+      "refreshedAt": "2026-11-13T17:48:51.219602+00:00"
     }
   ]
 }
