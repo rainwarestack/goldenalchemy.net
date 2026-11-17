@@ -227,6 +227,25 @@
       "thumbnail": "https://d21klxpge3tttg.cloudfront.net/wp-content/uploads/2025/02/Turkey-Adobo-with-Mojo-Sauce.jpg"
     },
     {
+      "id": "47aa09306af2b18b8a15",
+      "title": "Thanksgiving Side Dishes for the Grill and Smoker",
+      "url": "https://barbecuebible.com/2026/11/17/grilled-thanksgiving-side-dish-recipes/",
+      "publisher": "Barbecue Bible",
+      "elements": [
+        "fire"
+      ],
+      "tags": [
+        "grilling",
+        "hot smoking"
+      ],
+      "kind": "Article",
+      "origin": "RSS",
+      "publishedAt": "2026-11-17T11:00:16+00:00",
+      "addedAt": "2026-11-17T14:32:06.842846+00:00",
+      "summary": "",
+      "thumbnail": "https://d21klxpge3tttg.cloudfront.net/wp-content/uploads/2013/04/Ember-Roasted-Sweet-Potatoes.jpg"
+    },
+    {
       "id": "4acb28ea9bc03e53dc83",
       "title": "The 12 best recipes to bake in September: Time for apples!",
       "url": "https://www.kingarthurbaking.com/blog/2025/09/02/best-september-recipes",
@@ -672,17 +691,17 @@
       "id": "bbq",
       "name": "Barbecue Bible",
       "url": "https://barbecuebible.com/feed/",
-      "checkedAt": "2026-11-17T04:33:44.760152+00:00",
+      "checkedAt": "2026-11-17T14:32:06.842846+00:00",
       "status": "ok",
-      "refreshedAt": "2026-11-17T04:33:44.760152+00:00"
+      "refreshedAt": "2026-11-17T14:32:06.842846+00:00"
     },
     {
       "id": "baking",
       "name": "King Arthur Baking",
       "url": "https://www.kingarthurbaking.com/blog/feed",
-      "checkedAt": "2026-11-17T04:33:44.760152+00:00",
+      "checkedAt": "2026-11-17T14:32:06.842846+00:00",
       "status": "ok",
-      "refreshedAt": "2026-11-17T04:33:44.760152+00:00"
+      "refreshedAt": "2026-11-17T14:32:06.842846+00:00"
     }
   ]
 }
