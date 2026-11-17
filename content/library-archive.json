@@ -649,6 +649,22 @@
       "addedAt": "2026-11-11T16:14:51.176183+00:00",
       "summary": "",
       "thumbnail": "https://www.kingarthurbaking.com/sites/default/files/styles/featured_image/public/2026-09/Whole-Wheat-Dinner-Rolls_2026_Lifestyle_H_3070.jpg?itok=9XbOrURN"
+    },
+    {
+      "id": "8fc227ba3e430ee632e0",
+      "title": "How to turn any bread dough into rolls: Transform your favorite bread loaf into shareable rolls.",
+      "url": "https://www.kingarthurbaking.com/blog/2026/11/16/convert-bread-dough-into-rolls",
+      "publisher": "King Arthur Baking",
+      "elements": [
+        "air"
+      ],
+      "tags": [],
+      "kind": "Article",
+      "origin": "RSS",
+      "publishedAt": null,
+      "addedAt": "2026-11-17T04:33:44.760152+00:00",
+      "summary": "",
+      "thumbnail": "https://www.kingarthurbaking.com/sites/default/files/styles/featured_image/public/2026-09/Big-Batch-Milk-Bread-Rolls_BOTW_2026_INT_H_2977.jpg?itok=FaISeYOQ"
     }
   ],
   "sources": [
@@ -656,17 +672,17 @@
       "id": "bbq",
       "name": "Barbecue Bible",
       "url": "https://barbecuebible.com/feed/",
-      "checkedAt": "2026-11-16T22:12:19.033289+00:00",
+      "checkedAt": "2026-11-17T04:33:44.760152+00:00",
       "status": "ok",
-      "refreshedAt": "2026-11-16T22:12:19.033289+00:00"
+      "refreshedAt": "2026-11-17T04:33:44.760152+00:00"
     },
     {
       "id": "baking",
       "name": "King Arthur Baking",
       "url": "https://www.kingarthurbaking.com/blog/feed",
-      "checkedAt": "2026-11-16T22:12:19.033289+00:00",
+      "checkedAt": "2026-11-17T04:33:44.760152+00:00",
       "status": "ok",
-      "refreshedAt": "2026-11-16T22:12:19.033289+00:00"
+      "refreshedAt": "2026-11-17T04:33:44.760152+00:00"
     }
   ]
 }
