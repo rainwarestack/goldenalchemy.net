@@ -684,6 +684,22 @@
       "addedAt": "2026-11-17T04:33:44.760152+00:00",
       "summary": "",
       "thumbnail": "https://www.kingarthurbaking.com/sites/default/files/styles/featured_image/public/2026-09/Big-Batch-Milk-Bread-Rolls_BOTW_2026_INT_H_2977.jpg?itok=FaISeYOQ"
+    },
+    {
+      "id": "5f3a7446ad70a6b6e74b",
+      "title": "The two-second step to caramelize your pie crust : Just add sugar.",
+      "url": "https://www.kingarthurbaking.com/blog/2026/11/18/how-to-caramelize-pie-crust",
+      "publisher": "King Arthur Baking",
+      "elements": [
+        "air"
+      ],
+      "tags": [],
+      "kind": "Article",
+      "origin": "RSS",
+      "publishedAt": null,
+      "addedAt": "2026-11-18T22:01:52.057661+00:00",
+      "summary": "",
+      "thumbnail": "https://www.kingarthurbaking.com/sites/default/files/styles/featured_image/public/2026-11/Caramelized%20pie%20crust_Blog_2026_Photo%202_1219.jpg?itok=IzV-wSu4"
     }
   ],
   "sources": [
@@ -691,17 +707,17 @@
       "id": "bbq",
       "name": "Barbecue Bible",
       "url": "https://barbecuebible.com/feed/",
-      "checkedAt": "2026-11-18T14:08:02.160526+00:00",
+      "checkedAt": "2026-11-18T22:01:52.057661+00:00",
       "status": "ok",
-      "refreshedAt": "2026-11-18T14:08:02.160526+00:00"
+      "refreshedAt": "2026-11-18T22:01:52.057661+00:00"
     },
     {
       "id": "baking",
       "name": "King Arthur Baking",
       "url": "https://www.kingarthurbaking.com/blog/feed",
-      "checkedAt": "2026-11-18T14:08:02.160526+00:00",
+      "checkedAt": "2026-11-18T22:01:52.057661+00:00",
       "status": "ok",
-      "refreshedAt": "2026-11-18T14:08:02.160526+00:00"
+      "refreshedAt": "2026-11-18T22:01:52.057661+00:00"
     }
   ]
 }
