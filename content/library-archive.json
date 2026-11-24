@@ -264,6 +264,24 @@
       "thumbnail": "https://d21klxpge3tttg.cloudfront.net/wp-content/uploads/2023/02/BannerBBQB-WF.jpg"
     },
     {
+      "id": "fe33a0fc4c38929680d8",
+      "title": "Turkey S.O.S.: Last-Minute Thanksgiving Turkey Fixes",
+      "url": "https://barbecuebible.com/2026/11/24/turkey-sos/",
+      "publisher": "Barbecue Bible",
+      "elements": [
+        "fire"
+      ],
+      "tags": [
+        "hot smoking"
+      ],
+      "kind": "Article",
+      "origin": "RSS",
+      "publishedAt": "2026-11-24T11:00:03+00:00",
+      "addedAt": "2026-11-24T21:18:33.475583+00:00",
+      "summary": "",
+      "thumbnail": "https://d21klxpge3tttg.cloudfront.net/wp-content/uploads/2017/04/brining-turkey-rotator.jpg"
+    },
+    {
       "id": "4acb28ea9bc03e53dc83",
       "title": "The 12 best recipes to bake in September: Time for apples!",
       "url": "https://www.kingarthurbaking.com/blog/2025/09/02/best-september-recipes",
@@ -734,6 +752,22 @@
       "addedAt": "2026-11-24T00:57:52.963715+00:00",
       "summary": "",
       "thumbnail": "https://www.kingarthurbaking.com/sites/default/files/styles/featured_image/public/2026-11/Christmas%20cookie.jpg?itok=UGHjbk-Y"
+    },
+    {
+      "id": "d33066b8ca4687694490",
+      "title": "8 of our employee-owners’ favorite family recipes for the holidays  : Celebrate the season with us.",
+      "url": "https://www.kingarthurbaking.com/blog/2026/11/24/holiday-recipes",
+      "publisher": "King Arthur Baking",
+      "elements": [
+        "air"
+      ],
+      "tags": [],
+      "kind": "Article",
+      "origin": "RSS",
+      "publishedAt": null,
+      "addedAt": "2026-11-24T21:18:33.475583+00:00",
+      "summary": "",
+      "thumbnail": "https://www.kingarthurbaking.com/sites/default/files/styles/featured_image/public/2022-11/Pumpkin-Cheesecake-Pie_1002.jpg?itok=qd428bxc"
     }
   ],
   "sources": [
@@ -741,17 +775,17 @@
       "id": "bbq",
       "name": "Barbecue Bible",
       "url": "https://barbecuebible.com/feed/",
-      "checkedAt": "2026-11-24T11:01:39.021717+00:00",
+      "checkedAt": "2026-11-24T21:18:33.475583+00:00",
       "status": "ok",
-      "refreshedAt": "2026-11-24T11:01:39.021717+00:00"
+      "refreshedAt": "2026-11-24T21:18:33.475583+00:00"
     },
     {
       "id": "baking",
       "name": "King Arthur Baking",
       "url": "https://www.kingarthurbaking.com/blog/feed",
-      "checkedAt": "2026-11-24T11:01:39.021717+00:00",
+      "checkedAt": "2026-11-24T21:18:33.475583+00:00",
       "status": "ok",
-      "refreshedAt": "2026-11-24T11:01:39.021717+00:00"
+      "refreshedAt": "2026-11-24T21:18:33.475583+00:00"
     }
   ]
 }
