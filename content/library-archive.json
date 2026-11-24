@@ -718,6 +718,22 @@
       "addedAt": "2026-11-18T22:01:52.057661+00:00",
       "summary": "",
       "thumbnail": "https://www.kingarthurbaking.com/sites/default/files/styles/featured_image/public/2026-11/Caramelized%20pie%20crust_Blog_2026_Photo%202_1219.jpg?itok=IzV-wSu4"
+    },
+    {
+      "id": "3f79f06569f3d7bd9c62",
+      "title": "53 holiday and Christmas cookies to bake this year: Our best cookie recipes, including new classics and old favorites.",
+      "url": "https://www.kingarthurbaking.com/blog/2026/11/23/christmas-cookies",
+      "publisher": "King Arthur Baking",
+      "elements": [
+        "air"
+      ],
+      "tags": [],
+      "kind": "Article",
+      "origin": "RSS",
+      "publishedAt": null,
+      "addedAt": "2026-11-24T00:57:52.963715+00:00",
+      "summary": "",
+      "thumbnail": "https://www.kingarthurbaking.com/sites/default/files/styles/featured_image/public/2026-11/Christmas%20cookie.jpg?itok=UGHjbk-Y"
     }
   ],
   "sources": [
@@ -725,17 +741,17 @@
       "id": "bbq",
       "name": "Barbecue Bible",
       "url": "https://barbecuebible.com/feed/",
-      "checkedAt": "2026-11-23T12:58:04.604101+00:00",
+      "checkedAt": "2026-11-24T00:57:52.963715+00:00",
       "status": "ok",
-      "refreshedAt": "2026-11-23T12:58:04.604101+00:00"
+      "refreshedAt": "2026-11-24T00:57:52.963715+00:00"
     },
     {
       "id": "baking",
       "name": "King Arthur Baking",
       "url": "https://www.kingarthurbaking.com/blog/feed",
-      "checkedAt": "2026-11-23T12:58:04.604101+00:00",
+      "checkedAt": "2026-11-24T00:57:52.963715+00:00",
       "status": "ok",
-      "refreshedAt": "2026-11-23T12:58:04.604101+00:00"
+      "refreshedAt": "2026-11-24T00:57:52.963715+00:00"
     }
   ]
 }
