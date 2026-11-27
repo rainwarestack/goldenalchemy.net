@@ -282,6 +282,22 @@
       "thumbnail": "https://d21klxpge3tttg.cloudfront.net/wp-content/uploads/2017/04/brining-turkey-rotator.jpg"
     },
     {
+      "id": "0e639cd7b82a20f143da",
+      "title": "2026 Barbecue Holiday Gift Guide",
+      "url": "https://barbecuebible.com/2026/11/27/2026-bbq-holiday-gift-guide/",
+      "publisher": "Barbecue Bible",
+      "elements": [
+        "fire"
+      ],
+      "tags": [],
+      "kind": "Article",
+      "origin": "RSS",
+      "publishedAt": "2026-11-27T11:00:10+00:00",
+      "addedAt": "2026-11-27T12:34:39.356410+00:00",
+      "summary": "",
+      "thumbnail": "https://d21klxpge3tttg.cloudfront.net/wp-content/uploads/2026/11/Made-In-Cast-Iron-Skillet-Outdoor1000.jpg"
+    },
+    {
       "id": "4acb28ea9bc03e53dc83",
       "title": "The 12 best recipes to bake in September: Time for apples!",
       "url": "https://www.kingarthurbaking.com/blog/2025/09/02/best-september-recipes",
@@ -775,17 +791,17 @@
       "id": "bbq",
       "name": "Barbecue Bible",
       "url": "https://barbecuebible.com/feed/",
-      "checkedAt": "2026-11-27T02:54:16.661565+00:00",
+      "checkedAt": "2026-11-27T12:34:39.356410+00:00",
       "status": "ok",
-      "refreshedAt": "2026-11-27T02:54:16.661565+00:00"
+      "refreshedAt": "2026-11-27T12:34:39.356410+00:00"
     },
     {
       "id": "baking",
       "name": "King Arthur Baking",
       "url": "https://www.kingarthurbaking.com/blog/feed",
-      "checkedAt": "2026-11-27T02:54:16.661565+00:00",
+      "checkedAt": "2026-11-27T12:34:39.356410+00:00",
       "status": "ok",
-      "refreshedAt": "2026-11-27T02:54:16.661565+00:00"
+      "refreshedAt": "2026-11-27T12:34:39.356410+00:00"
     }
   ]
 }
